@@ -8,7 +8,7 @@
 </head>
 <body class="bg-white font-sans">
     <div class="flex flex-col w-screen h-screen">
-        <div class="flex flex-row-reverse mr-10 h-10">
+        <div id="navbar" class="flex flex-row-reverse mr-10 h-10">
             <div class="p-5">
                 <a href="#">Contact</a>
             </div>
@@ -22,16 +22,16 @@
                 <a href="#">About</a>
             </div>
         </div>
-        <div class="flex w-screen mt-60 justify-center">
-            <div class="flex flex-row">
+        <div id="intro" class="flex w-screen items-center justify-center min-h-screen">
+            <div class="flex flex-row -mt-48">
                 <div class="flex">
                     <img src="static/myPhoto.jpg" alt="My Photo" class="w-48 h-48 rounded-full">
                 </div>
                 <div class="flex flex-col ml-6 items-center mt-5">
-                    <div class="flex p-1">
+                    <div class="flex p-1 text-xl">
                         Hello I'm 👋
                     </div>
-                    <div class="flex font-extrabold text-4xl">
+                    <div class="flex font-extrabold text-6xl">
                         John San Juan
                     </div>
                     <div class="flex mt-1 font-medium text-lg">
@@ -52,6 +52,30 @@
                 </div>
             </div>
         </div>
+        <div id="about" class="flex justify-center min-h-screen w-screen">
+            <div class="flex flex-col">
+                <div class="flex mb-5 justify-center text-6xl font-bold">
+                    About Me
+                </div>
+                <div class="flex justify-center text-base mb-5 text-slate-200">
+                    <label for="Toggle3" class="inline-flex items-center p-2 rounded-md cursor-pointer dark:text-white transition-all duration-300">
+                        <input id="Toggle3" type="checkbox" class="hidden peer">
+                        <span class="px-4 py-2 rounded-l-md dark:bg-black dark:text-white peer-checked:dark:bg-gray-100 peer-checked:dark:text-black text-black transition-all duration-300">The non-techy side</span>
+                        <span class="px-4 py-2 rounded-r-md dark:bg-gray-100 dark:text-black peer-checked:dark:bg-black peer-checked:dark:text-white text-white transition-all duration-300">The techy side</span>
+                    </label>                                                                                                                 
+                </div>
+                <div id="techySection" class="flex flex-row">
+                    <!-- techy side section -->
+                    techy
+                </div>
+                <div id="nonTechySection" class="flex flex-row hidden">
+                    <!-- non-techy side section -->
+                    nontechy
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
