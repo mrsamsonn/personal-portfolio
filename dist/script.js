@@ -5,11 +5,11 @@ const toggleCheckbox = document.getElementById('Toggle3');
         toggleCheckbox.addEventListener('change', function() {
             if (this.checked) {
                 // Show techy side and hide non-techy side
-                techySection.classList.remove('hidden');
-                nonTechySection.classList.add('hidden');
+                nonTechySection.classList.remove('hidden');
+                techySection.classList.add('hidden');
             } else {
                 // Show non-techy side and hide techy side
-                techySection.classList.add('hidden');
-                nonTechySection.classList.remove('hidden');
+                nonTechySection.classList.add('hidden');
+                techySection.classList.remove('hidden');
             }
         });

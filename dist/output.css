@@ -616,6 +616,10 @@ video {
   width: 100vw;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -712,6 +716,10 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-sans {
