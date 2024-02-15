@@ -4,11 +4,9 @@ const nonTechySection = document.getElementById('nonTechySection');
 
 toggleCheckbox.addEventListener('change', function() {
     if (this.checked) {
-        // Show techy side and hide non-techy side
         nonTechySection.classList.remove('hidden');
         techySection.classList.add('hidden');
     } else {
-        // Show non-techy side and hide techy side
         nonTechySection.classList.add('hidden');
         techySection.classList.remove('hidden');
     }
@@ -16,6 +14,6 @@ toggleCheckbox.addEventListener('change', function() {
 
 function scrollToTarget(elementId) {
     var element = document.getElementById(elementId);
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-    element.style.marginTop = '100px';
+    var offset = element.getBoundingClientRect().top + window.pageYOffset - 100;
+    window.scrollTo({ top: offset, behavior: "smooth" });
 }
