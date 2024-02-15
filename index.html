@@ -10,10 +10,10 @@
     <div class="flex flex-col w-screen h-screen">
         <div id="navbar" class="flex flex-row-reverse mr-10 h-10">
             <div class="p-5">
-                <a href="#">Contact</a>
+                <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
             </div>
             <div class="p-5">
-                <a href="#">Project</a>
+                <button onclick="scrollToTarget('projects')" class="nav-link">Projects</button>
             </div>
             <div class="p-5">
                 <button onclick="scrollToTarget('experience')" class="">Experience</button>
@@ -22,12 +22,12 @@
                 <button onclick="scrollToTarget('about')" class="">About</button>
             </div>
         </div>
-        <div id="fixedNavbar" class="fixed top-0 right-0 h-screen flex flex-col justify-center items-center hidden">
+        <div id="fixedNavbar" class="fixed top-0 right-0 h-screen flex flex-col-reverse justify-center items-center hidden">
             <div class="p-5">
-                <a href="#" class="nav-link">Contact</a>
+                <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
             </div>
             <div class="p-5">
-                <a href="#" class="nav-link">Project</a>
+                <button onclick="scrollToTarget('projects')" class="nav-link">Projects</button>
             </div>
             <div class="p-5">
                 <button onclick="scrollToTarget('experience')" class="nav-link">Experience</button>
