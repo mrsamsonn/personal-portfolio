@@ -572,6 +572,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -604,6 +608,10 @@ video {
   min-height: 100vh;
 }
 
+.w-2\/5 {
+  width: 40%;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -614,10 +622,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-2\/5 {
-  width: 40%;
 }
 
 .cursor-pointer {
