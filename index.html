@@ -7,38 +7,32 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="bg-white font-sans">
+    <div id="fixedNavbar" class="breadcrumbs fixed opacity-0 transition-opacity duration-200 text-xs ml-5 bottom-0 text-gray-500">
+        <ul id="breadcrumbList">
+            <li><button onclick="scrollToTarget('intro')" class="nav-link">John</button></li>
+            <li><button onclick="scrollToTarget('about')" class="nav-link">About</button></li>
+            <li><button onclick="scrollToTarget('experience')" class="nav-link">Experience</button></liv>
+            <li><button onclick="scrollToTarget('projects')" class="nav-link">Projects</button></li> 
+            <li><button onclick="scrollToTarget('contact')" class="nav-link">Contact</button></li> 
+        </ul>
+    </div>
     <div class="flex flex-col w-screen h-screen">
-        <div id="navbar" class="flex flex-row-reverse mr-10 h-10">
-            <div class="p-5">
-                <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
+        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-500 ease-in-out h-10 w-screen">
+            <div class="flex flex-row-reverse h-full">
+                <div class="p-5">
+                    <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
+                </div>
+                <div class="p-5">
+                    <button onclick="scrollToTarget('projects')" class="nav-link">Projects</button>
+                </div>
+                <div class="p-5">
+                    <button onclick="scrollToTarget('experience')" class="">Experience</button>
+                </div>
+                <div class="p-5">
+                    <button onclick="scrollToTarget('about')" class="">About</button>
+                </div>
             </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('projects')" class="nav-link">Projects</button>
-            </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('experience')" class="">Experience</button>
-            </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('about')" class="">About</button>
-            </div>
-        </div>
-        <div id="fixedNavbar" class="flex fixed right-0 h-auto mt-60 flex-col-reverse justify-center items-center opacity-0 transition-opacity duration-1000">
-            <div class="p-5">
-                <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
-            </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('projects')" class="nav-link">Projects</button>
-            </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('experience')" class="nav-link">Experience</button>
-            </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('about')" class="nav-link">About</button>
-            </div>
-            <div class="p-5">
-                <button onclick="scrollToTarget('intro')" class="nav-link">John</button>
-            </div>
-        </div>         
+        </div>        
         <div id="intro" class="flex w-screen items-center justify-center min-h-screen">
             <div class="flex flex-row -mt-48">
                 <div class="flex">
@@ -105,6 +99,31 @@
                 </div>
                 <div class="flex mb-5 justify-center text-6xl font-bold">
                     Experience
+                </div>
+                <div class="flex">
+                    <div class="carousel rounded-box">
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="Burger" />
+                        </div> 
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" alt="Burger" />
+                        </div> 
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" alt="Burger" />
+                        </div> 
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg" alt="Burger" />
+                        </div> 
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg" alt="Burger" />
+                        </div> 
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg" alt="Burger" />
+                        </div> 
+                        <div class="carousel-item">
+                          <img src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" alt="Burger" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
