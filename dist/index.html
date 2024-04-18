@@ -6,8 +6,8 @@
     <title>John San Juan</title>
     <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-white font-sans">
-    <div id="fixedNavbar" class="breadcrumbs fixed opacity-0 transition-opacity duration-200 text-xs ml-5 bottom-0 text-gray-500">
+<body class="bg-white font-sans w-screen overflow-x-hidden scroll">
+    <div id="fixedNavbar" class="breadcrumbs fixed opacity-0 transition-opacity duration-200 text-xs ml-5 bottom-0 text-gray-500 z-10">
         <ul id="breadcrumbList">
             <li><button onclick="scrollToTarget('intro')" class="nav-link">John</button></li>
             <li><button onclick="scrollToTarget('about')" class="nav-link">About</button></li>
@@ -17,7 +17,7 @@
         </ul>
     </div>
     <div class="flex flex-col w-screen h-screen">
-        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-500 ease-in-out h-10 w-screen">
+        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-200 ease-in-out h-10 w-screen z-10">
             <div class="flex flex-row-reverse h-full">
                 <div class="p-5">
                     <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
@@ -34,7 +34,7 @@
             </div>
         </div>        
         <div id="intro" class="flex w-screen items-center justify-center min-h-screen">
-            <div class="flex flex-row -mt-48">
+            <div class="flex flex-row -mt-100">
                 <div class="flex">
                     <img src="static/myPhoto.jpg" alt="My Photo" class="w-48 h-48 rounded-full">
                 </div>
@@ -100,28 +100,194 @@
                 <div class="flex mb-5 justify-center text-6xl font-bold">
                     Experience
                 </div>
-                <div class="flex">
-                    <div class="carousel rounded-box">
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="Burger" />
+                <div class="flex w-3/6">
+                    <div class="carousel space-x-4 carousel-end">
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 bg-base-100 shadow-xl" id="card1">
+                                <figure><img src="static/berkeleylabs.png" alt="berkeleylabs" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    Berkeley Labs
+                                    <div class="badge badge-secondary">Research Intern</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?
+                                    If a dog chews shoes whose shoes does he choose?
+                                    If a dog chews shoes whose shoes does he choose?
+                                  </p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">Summer 2024</div> 
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <p>hello</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div> 
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" alt="Burger" />
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 bg-base-100 shadow-xl" id="card1">
+                                <figure><img src="static/crossconnect.png" alt="crossConnect" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    CrossConnect
+                                    <div class="badge badge-secondary">Full-stack Webdev</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">Present</div> 
+                                    <div class="badge badge-outline">since 2023</div> 
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <p>hello</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div> 
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" alt="Burger" />
-                        </div> 
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg" alt="Burger" />
-                        </div> 
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg" alt="Burger" />
-                        </div> 
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg" alt="Burger" />
-                        </div> 
-                        <div class="carousel-item">
-                          <img src="https://daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" alt="Burger" />
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 shadow-xl bg-base-100" id="card2">
+                                <figure><img src="static/csueb.png" alt="csueb" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    Cal State East Bay
+                                    <div class="badge badge-secondary">Researcher</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">since 2022</div> 
+                                    <div class="badge badge-outline">till 2023</div> 
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <a href="https://www.csueastbay.edu/" target="_blank"><p class="font-bold hover:text-blue-700">Cal Sate East Bay</p></a>
+                                        <a href="https://www.linkedin.com/school/csueastbay/" target="_blank"><p class="font-bold hover:text-blue-700">LinkedIn.CSUEastBay</p></a>
+                                        <p> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 shadow-xl bg-base-100" id="card2">
+                                <figure><img src="static/revivn.png" alt="revivn" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    Revivn
+                                    <div class="badge badge-secondary">Tech I</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">since 2021</div> 
+                                    <div class="badge badge-outline">till 2023</div> 
+                                    <div class="badge badge-outline">#2Years</div>
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <a href="https://www.revivn.com/" target="_blank"><p class="font-bold hover:text-blue-700">Revivn</p></a>
+                                        <a href="https://www.linkedin.com/company/revivn/" target="_blank"><p class="font-bold hover:text-blue-700">LinkedIn.Revivn</p></a>
+                                        <p> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 shadow-xl bg-base-100" id="card2">
+                                <figure><img src="static/tdk.png" alt="tdk" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    TDK
+                                    <div class="badge badge-secondary">COVID Proctor</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">since 2022</div> 
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <a href="https://www.revivn.com/" target="_blank"><p class="font-bold hover:text-blue-700">Revivn</p></a>
+                                        <a href="https://www.linkedin.com/company/revivn/" target="_blank"><p class="font-bold hover:text-blue-700">LinkedIn.Revivn</p></a>
+                                        <p> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 shadow-xl bg-base-100" id="card2">
+                                <figure><img src="static/babc.png" alt="babc" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    Bay Area Baptist Church
+                                    <div class="badge badge-secondary">AV</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">since 2014</div> 
+                                    <div class="badge badge-outline">since 2020</div>
+                                    <div class="badge badge-outline">#6Years</div>  
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <a href="https://www.revivn.com/" target="_blank"><p class="font-bold hover:text-blue-700">Revivn</p></a>
+                                        <a href="https://www.linkedin.com/company/revivn/" target="_blank"><p class="font-bold hover:text-blue-700">LinkedIn.Revivn</p></a>
+                                        <p> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item py-14">
+                            <div class="card w-96 shadow-xl bg-base-100" id="card2">
+                                <figure><img src="static/chasehotel.png" alt="chasehotel" /></figure>
+                                <div class="card-body flex-none">
+                                  <h2 class="card-title">
+                                    Chase Suite Hotel
+                                    <div class="badge badge-secondary">Front Desk</div>
+                                  </h2>
+                                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                                  <div class="card-actions justify-end">
+                                    <div class="badge badge-outline">since 2018</div> 
+                                  </div>
+                                </div>
+                                <div class="collapse collapse-arrow">
+                                    <input type="checkbox"/>
+                                    <div class="collapse-title text-base font-medium">
+                                        links
+                                    </div>
+                                    <div class="collapse-content"> 
+                                        <a href="https://www.revivn.com/" target="_blank"><p class="font-bold hover:text-blue-700">Revivn</p></a>
+                                        <a href="https://www.linkedin.com/company/revivn/" target="_blank"><p class="font-bold hover:text-blue-700">LinkedIn.Revivn</p></a>
+                                        <p> </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
