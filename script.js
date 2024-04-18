@@ -47,7 +47,7 @@ window.addEventListener('scroll', function() {
 
     if (window.scrollY > 0) {
         // Add background and text color
-        navbar.classList.add('bg-gray-800', 'text-white', '-mt-2', 'text-xs','mr-0');
+        navbar.classList.add('bg-black', 'text-white', '-mt-2', 'text-xs','mr-0');
         if (!isCentered) {
                 // Move the navbar to the center
                 // navbar.style.right = 'calc(50% - ' + (navbarWidth / 2) + 'px)';
@@ -56,7 +56,7 @@ window.addEventListener('scroll', function() {
             }
         } else {
             // Remove background and text color
-            navbar.classList.remove('bg-gray-800', 'text-white', '-mt-2','text-xs','-mr-0');
+            navbar.classList.remove('bg-black', 'text-white', '-mt-2','text-xs','mr-0');
             // Move the navbar back to the right
             navbar.style.right = '0';
             isCentered = false;
@@ -86,3 +86,24 @@ window.addEventListener('scroll', function() {
         }
     }
 });
+
+// Get all carousel items
+const carouselItems = document.querySelectorAll('.carousel-item');
+
+// Function to set the height of each card to match the tallest card
+function setCardHeights() {
+    let maxHeight = 0;
+    carouselItems.forEach(item => {
+        const card = item.querySelector('.card');
+        const cardHeight = card.offsetHeight;
+        maxHeight = Math.max(maxHeight, cardHeight);
+    });
+    carouselItems.forEach(item => {
+        const card = item.querySelector('.card');
+        card.style.height = `${maxHeight+25}px`;
+    });
+}
+
+// Call setCardHeights function when the window is loaded and resized
+window.addEventListener('load', setCardHeights);
+window.addEventListener('resize', setCardHeights);
