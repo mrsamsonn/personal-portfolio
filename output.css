@@ -1335,14 +1335,6 @@ details.collapse summary::-webkit-details-marker {
   z-index: 10;
 }
 
-.-mr-0 {
-  margin-right: -0px;
-}
-
-.-mt-4 {
-  margin-top: -1rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1453,16 +1445,6 @@ details.collapse summary::-webkit-details-marker {
 
 .translate-y-96 {
   --tw-translate-y: 24rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-5 {
-  --tw-translate-y: 1.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-5 {
-  --tw-translate-y: -1.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
