@@ -47,7 +47,8 @@ window.addEventListener('scroll', function() {
 
     if (window.scrollY > 0) {
         // Add background and text color
-        navbar.classList.add('bg-black', 'text-white', '-translate-y-5', 'text-xs','-mr-0');
+        navbar.classList.add('bg-black', 'text-white', 'text-xs');
+        navbar.classList.remove('mr-5','mt-5');
         if (!isCentered) {
                 // Move the navbar to the center
                 // navbar.style.right = 'calc(50% - ' + (navbarWidth / 2) + 'px)';
@@ -56,7 +57,8 @@ window.addEventListener('scroll', function() {
             }
         } else {
             // Remove background and text color
-            navbar.classList.remove('bg-black', 'text-white', '-translate-y-5', 'text-xs','-mr-0');
+            navbar.classList.remove('bg-black', 'text-white', 'text-xs');
+            navbar.classList.add('mr-5','mt-5');
             // Move the navbar back to the right
             navbar.style.right = '0';
             isCentered = false;
