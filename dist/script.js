@@ -95,10 +95,12 @@ document.querySelectorAll('.collapse').forEach(function(collapseContent) {
         // Check if the collapse content is expanded
         if (this.querySelector('input[type="checkbox"]').checked) {
             // Add Tailwind classes to move the projects section downward
-            document.getElementById('projects').classList.add('translate-y-96');
+            document.getElementById('projects').classList.add('translate-y-full');
+            document.getElementById('contact').classList.add('translate-y-full');
         } else {
             // Remove Tailwind classes if the collapse content is collapsed again
-            document.getElementById('projects').classList.remove('translate-y-96');
+            document.getElementById('projects').classList.remove('translate-y-full');
+            document.getElementById('contact').classList.remove('translate-y-full');
         }
     });
 });
