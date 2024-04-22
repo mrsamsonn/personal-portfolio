@@ -104,3 +104,46 @@ document.querySelectorAll('.collapse').forEach(function(collapseContent) {
         }
     });
 });
+
+// const cursorDot = document.querySelector(".cursor-dot");
+// // const cursorOutline = document.querySelector(".cursor-outline");
+
+// window.addEventListener("mousemove", function(e) {
+//     const posX = e.clientX;
+//     const posY = e.clientY;
+
+//     cursorDot.style.transform = `translate(${posX}px, ${posY}px)`;
+//     // cursorOutline.style.transform = `translate(${posX}px, ${posY}px)`;
+// });
+
+const cursorDot = document.querySelector(".cursor-dot");
+
+document.addEventListener("mousemove", function(e) {
+    const dotSize = 0; // Adjust this value if needed
+    const halfDotSize = dotSize / 2;
+
+    const posX = e.clientX - halfDotSize;
+    const posY = e.clientY - halfDotSize; // Adjust this value based on the margin
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+});
+
+// Get all video elements
+const videos = document.querySelectorAll('.video-hover');
+
+// Loop through each video element
+videos.forEach(video => {
+    // Add event listener for mouseenter event
+    video.addEventListener('mouseenter', function() {
+        // Set the opacity of the cursor dot to 100
+        cursorDot.style.opacity = '100';
+    });
+
+    // Add event listener for mouseleave event
+    video.addEventListener('mouseleave', function() {
+        // Set the opacity of the cursor dot to 0
+        cursorDot.style.opacity = '0';
+    });
+});
+
