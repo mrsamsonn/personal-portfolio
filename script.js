@@ -105,17 +105,6 @@ document.querySelectorAll('.collapse').forEach(function(collapseContent) {
     });
 });
 
-// const cursorDot = document.querySelector(".cursor-dot");
-// // const cursorOutline = document.querySelector(".cursor-outline");
-
-// window.addEventListener("mousemove", function(e) {
-//     const posX = e.clientX;
-//     const posY = e.clientY;
-
-//     cursorDot.style.transform = `translate(${posX}px, ${posY}px)`;
-//     // cursorOutline.style.transform = `translate(${posX}px, ${posY}px)`;
-// });
-
 const cursorDot = document.querySelector(".cursor-dot");
 
 document.addEventListener("mousemove", function(e) {
@@ -136,6 +125,14 @@ const videos = document.querySelectorAll('.video-hover');
 videos.forEach(video => {
     // Add event listener for mouseenter event
     video.addEventListener('mouseenter', function() {
+        // Get the text from the data attribute
+        const text = video.getAttribute('data-hover-text');
+        // Set the text of the cursor dot
+        cursorDot.innerText = text;
+
+        // Set the opacity of the cursor dot to 100
+        cursorDot.style.opacity = '100';
+
         // Set the opacity of the cursor dot to 100
         cursorDot.style.opacity = '100';
     });
@@ -146,4 +143,3 @@ videos.forEach(video => {
         cursorDot.style.opacity = '0';
     });
 });
-
