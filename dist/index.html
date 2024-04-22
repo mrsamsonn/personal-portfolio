@@ -17,8 +17,8 @@
             pointer-events: none;
             border-radius: 50%;
             transition: transform 0.2s ease;
+            opacity: 0;
         }
-                              
     </style>
 </head>
 <body class="bg-white font-sans w-screen overflow-x-hidden scroll">
@@ -372,7 +372,9 @@
                     <div class="flex justify-center">
                         <div class="w-3/4 hover:scale-110 transition duration-300 ease-in-out group">
                             <a href="#" class="block aspect-square object-cover grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-none">
-                                <video src="./static/visionpro.mp4" autoplay muted loop disablePictureInPicture class="object-cover h-full rounded-xl shadow-2xl video-hover">
+                                <video src="./static/visionpro.mp4" autoplay muted loop disablePictureInPicture class="object-cover h-full rounded-xl shadow-2xl video-hover" 
+                                data-hover-text="
+                                Play Video">
                                 </video>
                             </a>
                         </div>
@@ -380,7 +382,9 @@
                     <div class="flex justify-center">
                         <div class="w-3/4 hover:scale-110 transition duration-300 ease-in-out">
                             <a href="#" class="block aspect-square object-cover grayscale hover:grayscale-0 transition duration-300 ease-in-out cursor-none">
-                                <video src="./static/visionpro.mp4" autoplay muted loop disablePictureInPicture class="object-cover h-full rounded-xl shadow-2xl video-hover">
+                                <video src="./static/visionpro.mp4" autoplay muted loop disablePictureInPicture class="object-cover h-full rounded-xl shadow-2xl video-hover"
+                                data-hover-text="
+                                Vision pro">
                                 </video>
                             </a>
                         </div>
