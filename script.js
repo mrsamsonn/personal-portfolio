@@ -119,27 +119,25 @@ document.addEventListener("mousemove", function(e) {
 });
 
 // Get all video elements
-const videos = document.querySelectorAll('.video-hover');
+const project = document.querySelectorAll('.project-hover');
 
 // Loop through each video element
-videos.forEach(video => {
+project.forEach(project => {
     // Add event listener for mouseenter event
-    video.addEventListener('mouseenter', function() {
+    project.addEventListener('mouseenter', function() {
         // Get the text from the data attribute
-        const text = video.getAttribute('data-hover-text');
+        const text = project.getAttribute('data-hover-text');
         // Set the text of the cursor dot
-        cursorDot.innerText = text;
-
-        // Set the opacity of the cursor dot to 100
-        cursorDot.style.opacity = '100';
+        cursorDot.textContent = text;
 
         // Set the opacity of the cursor dot to 100
         cursorDot.style.opacity = '100';
     });
 
     // Add event listener for mouseleave event
-    video.addEventListener('mouseleave', function() {
+    project.addEventListener('mouseleave', function() {
         // Set the opacity of the cursor dot to 0
         cursorDot.style.opacity = '0';
+
     });
 });
