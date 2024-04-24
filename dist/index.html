@@ -21,7 +21,7 @@
         }
     </style>
 </head>
-<body class="bg-white font-sans w-screen overflow-x-hidden scroll">
+<body class="font-sans w-screen overflow-x-hidden scroll">
     <div class="cursor-dot transition-opacity duration-300"></div>
     <div id="fixedNavbar" class="breadcrumbs fixed opacity-0 transition-opacity duration-200 text-xs ml-5 bottom-0 text-gray-500 z-10">
         <ul id="breadcrumbList">
@@ -34,7 +34,7 @@
     </div>
     <div class="flex flex-col w-screen h-screen">
         <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-200 ease-in-out h-10 w-screen z-10">
-            <div class="flex flex-row-reverse h-full">
+            <div class="flex flex-row-reverse h-full">         
                 <div class="p-5">
                     <button onclick="scrollToTarget('contact')" class="nav-link">Contact</button>
                 </div>
@@ -65,7 +65,7 @@
                         Computer Engineering Student
                     </div>
                     <div class="flex flex-row space-x-2 mt-3">
-                        <button class="border-2 border-black text-sm rounded-2xl py-1 px-4">Resume</button>
+                        <a href="./static/SanJuan_Resume.pdf" target="_blank" class="border-2 border-black text-sm rounded-2xl py-1 px-4">Resume</a>
                         <button class="bg-black text-sm border-2 border-black text-white rounded-2xl py-1 px-4">Contact</button>
                     </div>
                     <div class="flex flex-row space-x-2 mt-3">
