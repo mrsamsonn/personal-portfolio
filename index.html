@@ -60,7 +60,7 @@
             </div>
         </div>        
         <div id="intro" class="flex w-screen items-center justify-center min-h-screen">
-            <div class="flex flex-row -mt-100">
+            <div id="intro-title" class="flex flex-row -mt-100 transition-transform duration-300 transform">
                 <div class="flex">
                     <img src="static/myPhoto.jpg" alt="My Photo" class="w-48 h-48 rounded-full">
                 </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="flex flex-row space-x-2 mt-3">
                         <a href="./static/SanJuan_Resume.pdf" target="_blank" class="border-2 border-black text-sm rounded-2xl py-1 px-4">Resume</a>
-                        <button class="bg-black text-sm border-2 border-black text-white rounded-2xl py-1 px-4">Contact</button>
+                        <button id="contactButton" class="bg-black text-sm border-2 border-black text-white rounded-2xl py-1 px-4">Contact</button>
                     </div>
                     <div class="flex flex-row space-x-2 mt-3">
                         <a href="https://www.linkedin.com/in/johnsanjuan6/" target="_blank">
@@ -86,6 +86,20 @@
                             <img src="static/github.png" alt="Github Logo" class="grayscale brightness-0 h-6 w-6 rounded-full">
                         </a>
                     </div>
+                </div>
+            </div>
+            <div id="contact-input" class="flex flex-col items-center translate-x-2/4 absolute bg-base p-10 transition-opacity duration-300 opacity-0 -z-30">
+                <div class="chat chat-start w-full">
+                    <div class="chat-image avatar">
+                      <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS chat bubble component" src="static/myPhoto.jpg" />
+                      </div>
+                    </div>
+                    <div class="chat-bubble">Hi here, Enter your email so we can keep in touch!</div>
+                </div>
+                <div class="flex flex-row mt-5 w-full justify-center">
+                    <input type="text" placeholder="Message" class="input w-full max-w-xs input-bordered" />
+                    <button class="btn btn-outline">Send</button>
                 </div>
             </div>
         </div>

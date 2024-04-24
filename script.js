@@ -26,6 +26,25 @@ toggleCheckbox.addEventListener('change', function() {
     }
 });
 
+//move intro to left
+const introSection = document.getElementById('intro-title');
+const moveLeftButton = document.getElementById('contactButton');
+const contactInput = document.getElementById('contact-input');
+
+moveLeftButton.addEventListener('click', function() {
+    // Toggle the CSS class to move the intro section to the left
+    introSection.classList.toggle('-translate-x-2/3');
+    contactInput.classList.toggle('z-30');
+    contactInput.classList.toggle('opacity-100');
+    
+    if (this.textContent === 'Contact') {
+        this.textContent = 'X';
+    } else {
+        this.textContent = 'Contact';
+    }
+});
+
+
 function scrollToTarget(elementId) {
     var element = document.getElementById(elementId);
     var offset = element.getBoundingClientRect().top + window.scrollY - 100;
