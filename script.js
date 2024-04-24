@@ -89,6 +89,8 @@ window.addEventListener('scroll', function() {
         fixedNavbar.classList.remove('opacity-100', 'duration-300');
     }
 
+
+// ------ Nav Bar -----
     if (window.scrollY > 0) {
         // Add background and text color
         navbar.classList.add('bg-black', 'text-white', 'text-xs');
