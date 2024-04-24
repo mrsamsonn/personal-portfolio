@@ -3,6 +3,7 @@ const techySection = document.getElementById('techySection');
 const nonTechySection = document.getElementById('nonTechySection');
 
 var navbar = document.getElementById('navbar');
+var themeDiv = document.getElementById('theme-div');
 var navbarWidth = navbar.offsetWidth;
 var isCentered = false;
 
@@ -49,6 +50,8 @@ window.addEventListener('scroll', function() {
         // Add background and text color
         navbar.classList.add('bg-black', 'text-white', 'text-xs');
         navbar.classList.remove('mr-5','mt-5');
+        themeDiv.classList.add('p-3');
+        themeDiv.classList.remove('p-5');
         if (!isCentered) {
                 // Move the navbar to the center
                 // navbar.style.right = 'calc(50% - ' + (navbarWidth / 2) + 'px)';
@@ -59,6 +62,8 @@ window.addEventListener('scroll', function() {
             // Remove background and text color
             navbar.classList.remove('bg-black', 'text-white', 'text-xs');
             navbar.classList.add('mr-5','mt-5');
+            themeDiv.classList.remove('p-3');
+            themeDiv.classList.add('p-5');
             // Move the navbar back to the right
             navbar.style.right = '0';
             isCentered = false;
@@ -124,4 +129,21 @@ project.forEach(project => {
         cursorDot.style.opacity = '0';
 
     });
+});
+
+
+//theme switching
+document.addEventListener('DOMContentLoaded', function() {
+    const themeSwitchCheckbox = document.getElementById('theme-switch-checkbox');
+    const initialTheme = document.documentElement.getAttribute('data-theme') || 'lofi';
+    themeSwitchCheckbox.checked = initialTheme === 'black';
+
+    const toggleTheme = () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'lofi';
+        const newTheme = currentTheme === 'lofi' ? 'black' : 'lofi';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+    };
+
+    themeSwitchCheckbox.addEventListener('click', toggleTheme);
 });
