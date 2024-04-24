@@ -68,6 +68,44 @@ contactButtonNav.addEventListener('click', function() {
 
 // --------------------------------------
 
+// ----- Chat Function --------
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sendButton = document.querySelector(".btn-outline");
+    const inputField = document.querySelector("#email-input");
+    const chatArea = document.querySelector("#chat-area");
+
+    const sendEmail = function() {
+        const email = inputField.value.trim();
+        
+        if (email !== "") {
+            const newChatBubble = document.createElement("div");
+            newChatBubble.classList.add("chat");
+            newChatBubble.innerHTML = `
+                <div class="chat-image avatar" style="margin-left: auto;">
+                    <div class="w-10 rounded-full">
+                        <img alt="User's avatar" src="static/userPhoto.jpg" />
+                    </div>
+                </div>
+                <div class="chat-bubble" style="text-align: right;">${email}</div>
+            `;
+            
+            // Insert the new chat bubble at the end of the chat area
+            chatArea.appendChild(newChatBubble);
+            
+            // Clear input field
+            inputField.value = "";
+        }
+    };
+
+    // Event listener for the "Send" button click
+    sendButton.addEventListener("click", sendEmail);
+});
+
+
+
+// ----------------------------------
+
 
 function scrollToTarget(elementId) {
     var element = document.getElementById(elementId);
