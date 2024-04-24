@@ -195,6 +195,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener for the "Send" button click
     sendButton.addEventListener("click", sendEmail);
+    // Event listener for the "Enter" key press in the input field
+    inputField.addEventListener("keypress", function(event) {
+        // Check if the pressed key is the "Enter" key (key code 13)
+        if (event.keyCode === 13) {
+            sendEmail();
+        }
+    });
 });
 
 
