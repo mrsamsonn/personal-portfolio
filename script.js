@@ -6,6 +6,7 @@ var navbar = document.getElementById('navbar');
 var themeDiv = document.getElementById('theme-div');
 var navbarWidth = navbar.offsetWidth;
 var isCentered = false;
+var isOpened = false;
 
 // Store the list of sections and their corresponding buttons
 var sections = [
@@ -31,6 +32,7 @@ const introSection = document.getElementById('intro-title');
 const contactButton = document.getElementById('contactButton');
 const contactButtonNav = document.getElementById('contactButton-nav');
 const contactInput = document.getElementById('contact-input');
+const chatStart = document.getElementById('init-chat');
 
 function toggleContactText() {
     // Check if the opacity of the contact input div is 100
@@ -51,6 +53,26 @@ contactButton.addEventListener('click', function() {
     introSection.classList.toggle('-translate-x-2/3');
     contactInput.classList.toggle('z-30');
     contactInput.classList.toggle('opacity-100');
+    
+     if(!isOpened){
+        // Delay the toggle of chatStart by 350 milliseconds (for example)
+     setTimeout(function() {
+        // Add opacity
+        chatStart.classList.toggle('opacity-100');
+
+        // Add translate-x with bounce effect
+        chatStart.style.transition = 'transform 0.5s ease-in-out';
+        chatStart.style.transform = 'translateX(-10px)';
+
+        // Remove translate-x and bounce effect after a short delay
+        setTimeout(function() {
+            chatStart.style.transition = 'transform 0.5s ease-in-out';
+            chatStart.style.transform = 'translateX(0)';
+        }, 500); // Adjust timing if necessary
+    }, 350); // Adjust timing if necessary
+    isOpened = true;
+     }
+
 
     // Toggle contact buttons' text content
     toggleContactText();
