@@ -9,9 +9,9 @@ var isCentered = false;
 // Store the list of sections and their corresponding buttons
 var sections = [
     { id: 'intro', label: 'John' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' }
 ];
 
@@ -95,11 +95,11 @@ document.querySelectorAll('.collapse').forEach(function(collapseContent) {
         // Check if the collapse content is expanded
         if (this.querySelector('input[type="checkbox"]').checked) {
             // Add Tailwind classes to move the projects section downward
-            document.getElementById('projects').classList.add('translate-y-full');
+            document.getElementById('about').classList.add('translate-y-1/2');
             document.getElementById('contact').classList.add('translate-y-full');
         } else {
             // Remove Tailwind classes if the collapse content is collapsed again
-            document.getElementById('projects').classList.remove('translate-y-full');
+            document.getElementById('about').classList.remove('translate-y-1/2');
             document.getElementById('contact').classList.remove('translate-y-full');
         }
     });
