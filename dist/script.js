@@ -26,23 +26,47 @@ toggleCheckbox.addEventListener('change', function() {
     }
 });
 
-//move intro to left
+//Reveal Contact Chat
 const introSection = document.getElementById('intro-title');
-const moveLeftButton = document.getElementById('contactButton');
+const contactButton = document.getElementById('contactButton');
+const contactButtonNav = document.getElementById('contactButton-nav');
 const contactInput = document.getElementById('contact-input');
 
-moveLeftButton.addEventListener('click', function() {
+function toggleContactText() {
+    // Check if the opacity of the contact input div is 100
+    const computedStyle = window.getComputedStyle(contactInput);
+    const opacity = computedStyle.getPropertyValue('opacity');
+
+    if (opacity === '1') {
+        contactButton.textContent = 'Contact';
+        contactButtonNav.textContent = 'Contact';
+    } else {
+        contactButton.textContent = 'X';
+        // Do not change the text content of contactButtonNav
+    }
+}
+
+contactButton.addEventListener('click', function() {
+    // Toggle the CSS class to move the intro section to the left
+    introSection.classList.toggle('-translate-x-2/3');
+    contactInput.classList.toggle('z-30');
+    contactInput.classList.toggle('opacity-100');
+
+    // Toggle contact buttons' text content
+    toggleContactText();
+});
+
+contactButtonNav.addEventListener('click', function() {
     // Toggle the CSS class to move the intro section to the left
     introSection.classList.toggle('-translate-x-2/3');
     contactInput.classList.toggle('z-30');
     contactInput.classList.toggle('opacity-100');
     
-    if (this.textContent === 'Contact') {
-        this.textContent = 'X';
-    } else {
-        this.textContent = 'Contact';
-    }
+    // Toggle contact buttons' text content
+    toggleContactText();
 });
+
+// --------------------------------------
 
 
 function scrollToTarget(elementId) {
