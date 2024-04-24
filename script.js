@@ -80,14 +80,21 @@ document.addEventListener("DOMContentLoaded", function() {
         
         if (email !== "") {
             const newChatBubble = document.createElement("div");
-            newChatBubble.classList.add("chat");
+            newChatBubble.classList.add("chat", "chat-end"); // Add chat-end class for positioning
             newChatBubble.innerHTML = `
-                <div class="chat-image avatar" style="margin-left: auto;">
+                <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="User's avatar" src="static/userPhoto.jpg" />
+                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                     </div>
                 </div>
-                <div class="chat-bubble" style="text-align: right;">${email}</div>
+                <div class="chat-header">
+                    You
+                    <time class="text-xs opacity-50">${getCurrentTime()}</time>
+                </div>
+                <div class="chat-bubble">${email}</div>
+                <div class="chat-footer opacity-50">
+                    Sent at ${getCurrentTime()}
+                </div>
             `;
             
             // Insert the new chat bubble at the end of the chat area
@@ -100,9 +107,42 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener for the "Send" button click
     sendButton.addEventListener("click", sendEmail);
+
+    // Function to get the current time in HH:MM format
+    function getCurrentTime() {
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        const minutes = currentTime.getMinutes();
+        return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+    }
 });
 
 
+// --time
+// Function to get the current time and display it with AM or PM
+function getCurrentTime() {
+    // Get the current time
+    const currentTime = new Date();
+    
+    // Extract hours and minutes
+    let hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
+    
+    // Determine if it's AM or PM
+    const amOrPm = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours to 12-hour format
+    hours = hours % 12 || 12; // Convert 0 to 12 for 12-hour clock
+    
+    // Format hours and minutes
+    const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes} ${amOrPm}`; // Add leading zero if minutes is single digit
+    
+    // Update the content of the HTML element with the formatted time
+    document.getElementById("current-time").textContent = formattedTime;
+}
+
+// Call getCurrentTime function when DOM content is loaded
+document.addEventListener("DOMContentLoaded", getCurrentTime);
 
 // ----------------------------------
 
