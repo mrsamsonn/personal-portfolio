@@ -75,13 +75,25 @@ document.addEventListener("DOMContentLoaded", function() {
     const inputField = document.querySelector("#email-input");
     const chatArea = document.querySelector("#chat-area");
 
+    // Function to get the current time in HH:MM format
+    function getCurrentTime() {
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        const minutes = currentTime.getMinutes();
+        return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+    }
+
     const sendEmail = function() {
         const email = inputField.value.trim();
+
+        // Regular expression for email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-        if (email !== "") {
-            const newChatBubble = document.createElement("div");
-            newChatBubble.classList.add("chat", "chat-end"); // Add chat-end class for positioning
-            newChatBubble.innerHTML = `
+        if (emailRegex.test(email)) {
+            // Create user's chat bubble
+            const userChatBubble = document.createElement("div");
+            userChatBubble.classList.add("chat", "chat-end"); // Add chat-end class for positioning
+            userChatBubble.innerHTML = `
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
                         <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
@@ -96,26 +108,95 @@ document.addEventListener("DOMContentLoaded", function() {
                     Sent at ${getCurrentTime()}
                 </div>
             `;
-            
-            // Insert the new chat bubble at the end of the chat area
-            chatArea.appendChild(newChatBubble);
+            // Insert the user's chat bubble at the end of the chat area
+            chatArea.appendChild(userChatBubble);
+            scrollToBottom();
             
             // Clear input field
             inputField.value = "";
+
+            // Reply back after a short delay
+            setTimeout(() => {
+                // Create system's reply chat bubble
+                const systemReplyBubble = document.createElement("div");
+                systemReplyBubble.classList.add("chat", "chat-start"); // Add chat-start class for positioning
+                systemReplyBubble.innerHTML = `
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="System's avatar" src="static/myPhoto.jpg" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        John
+                        <time class="text-xs opacity-50">${getCurrentTime()}</time>
+                    </div>
+                    <div class="chat-bubble">Awesome! What would you like to say?</div>
+                    <div class="chat-footer opacity-50">
+                        Delivered
+                    </div>
+                `;
+                // Insert the system's reply chat bubble after the user's chat bubble
+                chatArea.appendChild(systemReplyBubble);
+                scrollToBottom();
+            }, 1000); // Delay of 1000 milliseconds (1 second)
+        }else{
+            // Create user's chat bubble RETURNING INVALID EMAIL
+            const userChatBubble = document.createElement("div");
+            userChatBubble.classList.add("chat", "chat-end"); // Add chat-end class for positioning
+            userChatBubble.innerHTML = `
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                </div>
+                <div class="chat-header">
+                    You
+                    <time class="text-xs opacity-50">${getCurrentTime()}</time>
+                </div>
+                <div class="chat-bubble">${email}</div>
+                <div class="chat-footer opacity-50">
+                    Sent at ${getCurrentTime()}
+                </div>
+            `;
+            // Insert the user's chat bubble at the end of the chat area
+            chatArea.appendChild(userChatBubble);
+            scrollToBottom();
+
+            // Clear input field
+            inputField.value = "";
+
+            // Reply back after a short delay
+            setTimeout(() => {
+                // Create system's reply chat bubble
+                const systemReplyBubble = document.createElement("div");
+                systemReplyBubble.classList.add("chat", "chat-start"); // Add chat-start class for positioning
+                systemReplyBubble.innerHTML = `
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="System's avatar" src="static/myPhoto.jpg" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        John
+                        <time class="text-xs opacity-50">${getCurrentTime()}</time>
+                    </div>
+                    <div class="chat-bubble">Sorry, unfortunately the email you sent was invalid, 
+                    can you send a valid email?</div>
+                    <div class="chat-footer opacity-50">
+                        Delivered
+                    </div>
+                `;
+                // Insert the system's reply chat bubble after the user's chat bubble
+                chatArea.appendChild(systemReplyBubble);
+                scrollToBottom();
+            }, 1000); // Delay of 1000 milliseconds (1 second)
         }
     };
 
     // Event listener for the "Send" button click
     sendButton.addEventListener("click", sendEmail);
-
-    // Function to get the current time in HH:MM format
-    function getCurrentTime() {
-        const currentTime = new Date();
-        const hours = currentTime.getHours();
-        const minutes = currentTime.getMinutes();
-        return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
-    }
 });
+
 
 
 // --time
@@ -143,6 +224,12 @@ function getCurrentTime() {
 
 // Call getCurrentTime function when DOM content is loaded
 document.addEventListener("DOMContentLoaded", getCurrentTime);
+
+// Function to scroll to the bottom of the chat area
+function scrollToBottom() {
+    const chatArea = document.getElementById("chat-area");
+    chatArea.scrollTop = chatArea.scrollHeight;
+}
 
 // ----------------------------------
 
