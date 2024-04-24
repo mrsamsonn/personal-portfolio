@@ -89,22 +89,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Add an event listener to each collapse content to detect when it expands
-document.querySelectorAll('.collapse').forEach(function(collapseContent) {
-    collapseContent.addEventListener('change', function() {
-        // Check if the collapse content is expanded
-        if (this.querySelector('input[type="checkbox"]').checked) {
-            // Add Tailwind classes to move the projects section downward
-            document.getElementById('about').classList.add('translate-y-1/2');
-            document.getElementById('contact').classList.add('translate-y-full');
-        } else {
-            // Remove Tailwind classes if the collapse content is collapsed again
-            document.getElementById('about').classList.remove('translate-y-1/2');
-            document.getElementById('contact').classList.remove('translate-y-full');
-        }
-    });
-});
-
 const cursorDot = document.querySelector(".cursor-dot");
 
 document.addEventListener("mousemove", function(e) {
