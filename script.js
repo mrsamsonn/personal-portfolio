@@ -51,7 +51,7 @@ function toggleContactText() {
 contactButton.addEventListener('click', function() {
     // Toggle the CSS class to move the intro section to the left
     introSection.classList.toggle('-translate-x-2/3');
-    contactInput.classList.toggle('z-30');
+    contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
     
      if(!isOpened){
@@ -81,9 +81,29 @@ contactButton.addEventListener('click', function() {
 contactButtonNav.addEventListener('click', function() {
     // Toggle the CSS class to move the intro section to the left
     introSection.classList.toggle('-translate-x-2/3');
-    contactInput.classList.toggle('z-30');
+    contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
     
+     if(!isOpened){
+        // Delay the toggle of chatStart by 350 milliseconds (for example)
+     setTimeout(function() {
+        // Add opacity
+        chatStart.classList.toggle('opacity-100');
+
+        // Add translate-x with bounce effect
+        chatStart.style.transition = 'transform 0.5s ease-in-out';
+        chatStart.style.transform = 'translateX(-10px)';
+
+        // Remove translate-x and bounce effect after a short delay
+        setTimeout(function() {
+            chatStart.style.transition = 'transform 0.5s ease-in-out';
+            chatStart.style.transform = 'translateX(0)';
+        }, 500); // Adjust timing if necessary
+    }, 350); // Adjust timing if necessary
+    isOpened = true;
+     }
+
+
     // Toggle contact buttons' text content
     toggleContactText();
 });
