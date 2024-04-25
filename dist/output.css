@@ -2296,6 +2296,10 @@ details.collapse summary::-webkit-details-marker {
   z-index: 30;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }

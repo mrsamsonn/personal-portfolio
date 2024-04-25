@@ -33,7 +33,7 @@
         </ul>
     </div>
     <div class="flex flex-col w-screen h-screen">
-        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-200 ease-in-out h-10 w-screen z-10">
+        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-200 ease-in-out h-10 w-screen z-30">
             <div class="flex flex-row-reverse h-full">
                 <div class="p-3" id="theme-div" >
                     <label class="swap swap-rotate" id="theme-switch">
@@ -46,7 +46,7 @@
                     </label>   
                 </div>      
                 <div class="p-5">
-                    <button id="contactButton-nav" class="nav-link">Contact</button>
+                    <button id="contactButton-nav" onclick="scrollToTarget('intro')" class="nav-link">Contact</button>
                 </div>
                 <div class="p-5">
                     <button onclick="scrollToTarget('about')" class="">About</button>
