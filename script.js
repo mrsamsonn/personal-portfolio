@@ -304,9 +304,17 @@ document.addEventListener("DOMContentLoaded", function() {
         // Check if the pressed key is the "Enter" key (key code 13)
         if (event.keyCode === 13) {
             if (document.querySelector("#message-reply") && notReplied) {
+                // Prevent the default behavior (new line insertion)
+                event.preventDefault();
+                // Scroll the textarea to the top
+                this.scrollTop = 0;
                 sendReply();
                 console.log("Message:",Message);
             } else {
+                // Prevent the default behavior (new line insertion)
+                event.preventDefault();
+                // Scroll the textarea to the top
+                this.scrollTop = 0;
                 sendEmail();
                 console.log("Email:",Email);
             }
