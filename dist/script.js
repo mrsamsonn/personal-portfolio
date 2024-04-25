@@ -31,6 +31,7 @@ toggleCheckbox.addEventListener('change', function() {
 const introSection = document.getElementById('intro-title');
 const contactButton = document.getElementById('contactButton');
 const contactButtonNav = document.getElementById('contactButton-nav');
+const closeChat = document.getElementById('close-chat');
 const contactInput = document.getElementById('contact-input');
 const chatStart = document.getElementById('init-chat');
 
@@ -51,7 +52,7 @@ function toggleContactText() {
 contactButton.addEventListener('click', function() {
     // Toggle the CSS class to move the intro section to the left
     introSection.classList.toggle('-translate-x-2/3');
-    contactInput.classList.toggle('z-30');
+    contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
     
      if(!isOpened){
@@ -81,9 +82,59 @@ contactButton.addEventListener('click', function() {
 contactButtonNav.addEventListener('click', function() {
     // Toggle the CSS class to move the intro section to the left
     introSection.classList.toggle('-translate-x-2/3');
-    contactInput.classList.toggle('z-30');
+    contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
     
+     if(!isOpened){
+        // Delay the toggle of chatStart by 350 milliseconds (for example)
+     setTimeout(function() {
+        // Add opacity
+        chatStart.classList.toggle('opacity-100');
+
+        // Add translate-x with bounce effect
+        chatStart.style.transition = 'transform 0.5s ease-in-out';
+        chatStart.style.transform = 'translateX(-10px)';
+
+        // Remove translate-x and bounce effect after a short delay
+        setTimeout(function() {
+            chatStart.style.transition = 'transform 0.5s ease-in-out';
+            chatStart.style.transform = 'translateX(0)';
+        }, 500); // Adjust timing if necessary
+    }, 350); // Adjust timing if necessary
+    isOpened = true;
+     }
+
+
+    // Toggle contact buttons' text content
+    toggleContactText();
+});
+
+closeChat.addEventListener('click', function() {
+    // Toggle the CSS class to move the intro section to the left
+    introSection.classList.toggle('-translate-x-2/3');
+    contactInput.classList.toggle('z-10');
+    contactInput.classList.toggle('opacity-100');
+    
+     if(!isOpened){
+        // Delay the toggle of chatStart by 350 milliseconds (for example)
+     setTimeout(function() {
+        // Add opacity
+        chatStart.classList.toggle('opacity-100');
+
+        // Add translate-x with bounce effect
+        chatStart.style.transition = 'transform 0.5s ease-in-out';
+        chatStart.style.transform = 'translateX(-10px)';
+
+        // Remove translate-x and bounce effect after a short delay
+        setTimeout(function() {
+            chatStart.style.transition = 'transform 0.5s ease-in-out';
+            chatStart.style.transform = 'translateX(0)';
+        }, 500); // Adjust timing if necessary
+    }, 350); // Adjust timing if necessary
+    isOpened = true;
+     }
+
+
     // Toggle contact buttons' text content
     toggleContactText();
 });
@@ -304,9 +355,17 @@ document.addEventListener("DOMContentLoaded", function() {
         // Check if the pressed key is the "Enter" key (key code 13)
         if (event.keyCode === 13) {
             if (document.querySelector("#message-reply") && notReplied) {
+                // Prevent the default behavior (new line insertion)
+                event.preventDefault();
+                // Scroll the textarea to the top
+                this.scrollTop = 0;
                 sendReply();
                 console.log("Message:",Message);
             } else {
+                // Prevent the default behavior (new line insertion)
+                event.preventDefault();
+                // Scroll the textarea to the top
+                this.scrollTop = 0;
                 sendEmail();
                 console.log("Email:",Email);
             }

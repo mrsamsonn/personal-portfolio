@@ -33,7 +33,7 @@
         </ul>
     </div>
     <div class="flex flex-col w-screen h-screen">
-        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-200 ease-in-out h-10 w-screen z-10">
+        <div id="navbar" class="fixed right-0 mr-5 mt-5 transition-all duration-200 ease-in-out h-10 w-screen z-30">
             <div class="flex flex-row-reverse h-full">
                 <div class="p-3" id="theme-div" >
                     <label class="swap swap-rotate" id="theme-switch">
@@ -46,7 +46,7 @@
                     </label>   
                 </div>      
                 <div class="p-5">
-                    <button id="contactButton-nav" class="nav-link">Contact</button>
+                    <button id="contactButton-nav" onclick="scrollToTarget('intro')" class="nav-link">Contact</button>
                 </div>
                 <div class="p-5">
                     <button onclick="scrollToTarget('about')" class="">About</button>
@@ -89,6 +89,7 @@
                 </div>
             </div>
             <div id="contact-input" class="flex flex-col w-1/3 items-center translate-x-2/4 absolute bg-base p-10 transition-opacity duration-300 opacity-0 -z-30 shadow-md">
+                <div class="flex justify-end w-full font-bold h-10"><button id="close-chat">X</button></div>
                 <div id="chat-area" class="flex flex-col overflow-y-auto max-h-[400px] overflow-x-hidden">
                     <div id="init-chat" class="chat chat-start opacity-0 translate-x-36 ease-in transition-all duration-200 transform">
                         <div class="chat-image avatar">
@@ -106,9 +107,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-row mt-5 w-full justify-center">
-                    <input id="email-input" type="text" placeholder="Message" class="input w-full max-w-xs input-bordered" />
-                    <button class="btn btn-outline">Send</button>
+                <div class="flex flex-row mt-5 w-full justify-center space-x-2">
+                    <textarea id="email-input" type="text" placeholder="Message" class="textarea w-full max-w-xs input-bordered h-auto resize-none" autocomplete="off"></textarea>
+                    <button class="btn btn-outline btn-sm">Send</button>
                 </div>
             </div>
         </div>
