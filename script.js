@@ -1,5 +1,3 @@
-import config from './config.js';
-
 const toggleCheckbox = document.getElementById('Toggle3');
 const techySection = document.getElementById('techySection');
 const nonTechySection = document.getElementById('nonTechySection');
@@ -10,16 +8,19 @@ var navbarWidth = navbar.offsetWidth;
 var isCentered = false;
 var isOpened = false;
 
+// -----------Emailjs config.js-------------
 const emailjsServiceId = config.emailjs.serviceId;
 const emailjsTemplateId = config.emailjs.templateId;
 const emailjsPublicKey = config.emailjs.publicKey;
 
-// Emailjs
-(function(){
+ // Emailjs initialization
+ (function(){
     emailjs.init({
         publicKey: emailjsPublicKey,
     });
 })();
+
+// ------------------------
 
 // Store the list of sections and their corresponding buttons
 var sections = [
