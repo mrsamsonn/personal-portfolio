@@ -4,6 +4,7 @@ const nonTechySection = document.getElementById('nonTechySection');
 
 var navbar = document.getElementById('navbar');
 var themeDiv = document.getElementById('theme-div');
+var svgScroll = document.getElementById('svgScrolldown');
 var navbarWidth = navbar.offsetWidth;
 var isCentered = false;
 var isOpened = false;
@@ -537,6 +538,8 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('mr-5','mt-5');
         themeDiv.classList.add('p-3');
         themeDiv.classList.remove('p-5');
+        svgScroll.classList.add('opacity-0');
+        svgScroll.classList.remove('opacity-100');
         if (!isCentered) {
                 // Move the navbar to the center
                 // navbar.style.right = 'calc(50% - ' + (navbarWidth / 2) + 'px)';
@@ -549,6 +552,8 @@ window.addEventListener('scroll', function() {
             navbar.classList.add('mr-5','mt-5');
             themeDiv.classList.remove('p-3');
             themeDiv.classList.add('p-5');
+            svgScroll.classList.remove('opacity-0');
+        svgScroll.classList.add('opacity-100');
             // Move the navbar back to the right
             navbar.style.right = '0';
             isCentered = false;
