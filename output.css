@@ -849,13 +849,6 @@ html {
   pointer-events: none;
 }
 
-.btn-circle {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 9999px;
-  padding: 0px;
-}
-
 :where(.btn:is(input[type="checkbox"])),
 :where(.btn:is(input[type="radio"])) {
   width: auto;
@@ -2194,30 +2187,9 @@ details.collapse summary::-webkit-details-marker {
   padding: 0px;
 }
 
-.btn-circle:where(.btn-xs) {
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 9999px;
-  padding: 0px;
-}
-
 .btn-circle:where(.btn-sm) {
   height: 2rem;
   width: 2rem;
-  border-radius: 9999px;
-  padding: 0px;
-}
-
-.btn-circle:where(.btn-md) {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 9999px;
-  padding: 0px;
-}
-
-.btn-circle:where(.btn-lg) {
-  height: 4rem;
-  width: 4rem;
   border-radius: 9999px;
   padding: 0px;
 }
@@ -2294,10 +2266,6 @@ details.collapse summary::-webkit-details-marker {
 
 .z-30 {
   z-index: 30;
-}
-
-.z-50 {
-  z-index: 50;
 }
 
 .mb-2 {
@@ -2384,6 +2352,10 @@ details.collapse summary::-webkit-details-marker {
   height: 1.5rem;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-full {
   height: 100%;
 }
@@ -2392,20 +2364,8 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
-.h-auto {
-  height: auto;
-}
-
-.h-\[400px\] {
-  height: 400px;
-}
-
 .max-h-\[400px\] {
   max-height: 400px;
-}
-
-.max-h-96 {
-  max-height: 24rem;
 }
 
 .min-h-screen {
@@ -2503,10 +2463,6 @@ details.collapse summary::-webkit-details-marker {
   resize: none;
 }
 
-.resize-y {
-  resize: vertical;
-}
-
 .flex-row {
   flex-direction: row;
 }
@@ -2517,10 +2473,6 @@ details.collapse summary::-webkit-details-marker {
 
 .flex-col {
   flex-direction: column;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 .items-center {
@@ -2557,16 +2509,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
-.space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .overflow-y-auto {
@@ -2754,10 +2696,6 @@ details.collapse summary::-webkit-details-marker {
 
 .font-normal {
   font-weight: 400;
-}
-
-.font-semibold {
-  font-weight: 600;
 }
 
 .text-black {

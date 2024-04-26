@@ -147,11 +147,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendButton = document.querySelector(".btn-outline");
     const inputField = document.querySelector("#email-input");
     const chatArea = document.querySelector("#chat-area");
-    let notReplied = false;
+    // let notReplied = false;
 
     // Variables to temporarily store input
     let Email = "";
     let Message = "";
+    let Name = "";
 
     // Function to get the current time in HH:MM format
     function getCurrentTime() {
@@ -161,13 +162,77 @@ document.addEventListener("DOMContentLoaded", function() {
         return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
     }
 
-    const sendEmail = function() {
+    const RequestName = function() {
+        if (!Name && !Email && !Message) {
+
+            // Store the email
+            Name = inputField.value;
+
+            // Create user's chat bubble
+            const userChatBubble = document.createElement("div");
+            userChatBubble.classList.add("chat", "chat-end"); // Add chat-end class for positioning
+            userChatBubble.innerHTML = `
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                </div>
+                <div class="chat-header">
+                    You
+                    <time class="text-xs opacity-50">${getCurrentTime()}</time>
+                </div>
+                <div class="chat-bubble">${Name}</div>
+                <div class="chat-footer opacity-50">
+                    Sent at ${getCurrentTime()}
+                </div>
+            `;
+            // Insert the user's chat bubble at the end of the chat area
+            chatArea.appendChild(userChatBubble);
+            scrollToBottom();
+            
+            // Clear input field
+            inputField.value = "";
+
+            // Reply back after a short delay
+            setTimeout(() => {
+                // Create system's reply chat bubble
+                const systemReplyBubble = document.createElement("div");
+                systemReplyBubble.classList.add("chat", "chat-start"); // Add chat-start class for positioning
+                systemReplyBubble.innerHTML = `
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img alt="System's avatar" src="static/myPhoto.jpg" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        John
+                        <time class="text-xs opacity-50">${getCurrentTime()}</time>
+                    </div>
+                    <div class="chat-bubble">Hi ${Name}, what's your email so we can keep in touch!</div>
+                    <div class="chat-footer opacity-50">
+                        Delivered
+                    </div>
+                `;
+                // Insert the system's reply chat bubble after the user's chat bubble
+                chatArea.appendChild(systemReplyBubble);
+                scrollToBottom();
+
+            }, 1000); // Delay of 1000 milliseconds (1 second)
+
+            // notReplied = true;
+        } else {
+            console.log("No reply state found");
+        }
+    };
+
+
+    const RequestEmail = function() {
         const email = inputField.value.trim();
 
         // Regular expression for email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-        if (emailRegex.test(email) && !notReplied) {
+        if (emailRegex.test(email) && Name && !Message) {
 
             // Store the email
             Email = inputField.value;
@@ -223,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             }, 1000); // Delay of 1000 milliseconds (1 second)
 
-            notReplied = true;
+            // notReplied = true;
         } else {
             // Create user's chat bubble RETURNING INVALID EMAIL
             const userChatBubble = document.createElement("div");
@@ -265,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         John
                         <time class="text-xs opacity-50">${getCurrentTime()}</time>
                     </div>
-                    <div class="chat-bubble">Sorry, unfortunately the email you sent was invalid, 
+                    <div class="chat-bubble">Sorry ${Name}, unfortunately the email you sent was invalid, 
                     can you send a valid email?</div>
                     <div class="chat-footer opacity-50">
                         Delivered
@@ -278,9 +343,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    const sendReply = function() {
+    const RequestMessage = function() {
         // Check if the chat element with id "message-reply" exists
-        if (document.querySelector("#message-reply") && notReplied) {
+        if (document.querySelector("#message-reply") && Email && Name) {
             // Store the email
             Message = inputField.value;
             
@@ -334,7 +399,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 scrollToBottom();
 
             }, 1000); // Delay of 1000 milliseconds (1 second)
-            notReplied = false;
         } else {
             // Handle if there's no reply state
             console.log("No reply state found");
@@ -343,10 +407,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listener for the "Send" button click
     sendButton.addEventListener("click", function(event) {
-        if (document.querySelector("#message-reply") && notReplied) {
-            sendReply();
-        } else {
-            sendEmail();
+        if (document.querySelector("#message-reply") && Email && Name) {
+            RequestMessage();
+        } else if (!Message && !Email && Name){
+            RequestEmail();
+        }else{
+            RequestName();
         }
     });
 
@@ -354,20 +420,29 @@ document.addEventListener("DOMContentLoaded", function() {
     inputField.addEventListener("keypress", function(event) {
         // Check if the pressed key is the "Enter" key (key code 13)
         if (event.keyCode === 13) {
-            if (document.querySelector("#message-reply") && notReplied) {
+            if (document.querySelector("#message-reply") && Email && Name) {
                 // Prevent the default behavior (new line insertion)
                 event.preventDefault();
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
-                sendReply();
+                RequestMessage();
                 console.log("Message:",Message);
-            } else {
+                Email="";
+                Message="";
+            } else if(!Message && !Email && Name) {
                 // Prevent the default behavior (new line insertion)
                 event.preventDefault();
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
-                sendEmail();
+                RequestEmail();
                 console.log("Email:",Email);
+            }else{
+                // Prevent the default behavior (new line insertion)
+                event.preventDefault();
+                // Scroll the textarea to the top
+                this.scrollTop = 0;
+                RequestName();
+                console.log("Name:",Name);
             }
         }
     });
