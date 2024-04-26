@@ -1,3 +1,5 @@
+import config from './config.js';
+
 const toggleCheckbox = document.getElementById('Toggle3');
 const techySection = document.getElementById('techySection');
 const nonTechySection = document.getElementById('nonTechySection');
@@ -7,6 +9,17 @@ var themeDiv = document.getElementById('theme-div');
 var navbarWidth = navbar.offsetWidth;
 var isCentered = false;
 var isOpened = false;
+
+const emailjsServiceId = config.emailjs.serviceId;
+const emailjsTemplateId = config.emailjs.templateId;
+const emailjsPublicKey = config.emailjs.publicKey;
+
+// Emailjs
+(function(){
+    emailjs.init({
+        publicKey: emailjsPublicKey,
+    });
+})();
 
 // Store the list of sections and their corresponding buttons
 var sections = [
@@ -160,6 +173,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const hours = currentTime.getHours();
         const minutes = currentTime.getMinutes();
         return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+    }
+
+    // Emailjs Function
+    function sendMail(){
+        let parms = {
+            name : Name,
+            email : Email,
+            message : Message,
+        }
+        emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
     }
 
     const RequestName = function() {
@@ -409,6 +432,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sendButton.addEventListener("click", function(event) {
         if (document.querySelector("#message-reply") && Email && Name) {
             RequestMessage();
+            sendMail();
         } else if (!Message && !Email && Name){
             RequestEmail();
         }else{
@@ -426,7 +450,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
                 RequestMessage();
-                console.log("Message:",Message);
+                sendMail();
                 Email="";
                 Message="";
             } else if(!Message && !Email && Name) {
@@ -435,14 +459,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
                 RequestEmail();
-                console.log("Email:",Email);
             }else{
                 // Prevent the default behavior (new line insertion)
                 event.preventDefault();
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
                 RequestName();
-                console.log("Name:",Name);
             }
         }
     });
