@@ -646,3 +646,9 @@ function showWaymo() {
     var waymoContainer = document.getElementById("waymoContainer");
     waymoContainer.classList.toggle('hidden');
 }
+
+function showTesla() {
+    hideContent("teslaContainer");
+    var teslaContainer = document.getElementById("teslaContainer");
+    teslaContainer.classList.toggle('hidden');
+}
