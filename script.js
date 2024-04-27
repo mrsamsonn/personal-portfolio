@@ -634,28 +634,8 @@ function hideContent(idToShow) {
     }
 }
 
-
-function showResume() {
-    hideContent("resumeContainer");
-    var resumeContainer = document.getElementById("resumeContainer");
-    resumeContainer.classList.toggle('hidden');
+function showContent(idToShow) {
+    hideContent(idToShow); // Hide other content
+    var container = document.getElementById(idToShow);
+    container.classList.toggle('hidden');
 }
-
-function showWaymo() {
-    hideContent("waymoContainer");
-    var waymoContainer = document.getElementById("waymoContainer");
-    waymoContainer.classList.toggle('hidden');
-}
-
-function showTesla() {
-    hideContent("teslaContainer");
-    var teslaContainer = document.getElementById("teslaContainer");
-    teslaContainer.classList.toggle('hidden');
-}
-
-function showFirstPC() {
-    hideContent("firstPCContainer");
-    var firstPCContainer = document.getElementById("firstPCContainer");
-    firstPCContainer.classList.toggle('hidden');
-}
-
