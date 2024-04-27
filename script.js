@@ -615,12 +615,34 @@ function scrollToAboutAndShowResume() {
     // Check if the PDF container is hidden, then show it
     var resumeContainer = document.getElementById("resumeContainer");
     if (resumeContainer.classList.contains("hidden")) {
-        resumeContainer.classList.remove("hidden");
+        showResume();
     }
 }
 
 // ------WindowMenu----------
+
+// check if anything is unhidden
+function hideContent(idToShow) {
+    var windowContent = document.getElementById("windowContent");
+    var elements = windowContent.getElementsByClassName("theContent");
+
+    // Hide all visible content except the one specified by idToShow
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].id !== idToShow && !elements[i].classList.contains('hidden')) {
+            elements[i].classList.add('hidden');
+        }
+    }
+}
+
+
 function showResume() {
+    hideContent("resumeContainer");
     var resumeContainer = document.getElementById("resumeContainer");
     resumeContainer.classList.toggle('hidden');
+}
+
+function showWaymo() {
+    hideContent("waymoContainer");
+    var waymoContainer = document.getElementById("waymoContainer");
+    waymoContainer.classList.toggle('hidden');
 }
