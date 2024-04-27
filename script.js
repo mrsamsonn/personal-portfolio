@@ -652,3 +652,10 @@ function showTesla() {
     var teslaContainer = document.getElementById("teslaContainer");
     teslaContainer.classList.toggle('hidden');
 }
+
+function showFirstPC() {
+    hideContent("firstPCContainer");
+    var firstPCContainer = document.getElementById("firstPCContainer");
+    firstPCContainer.classList.toggle('hidden');
+}
+
