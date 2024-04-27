@@ -615,7 +615,7 @@ function scrollToAboutAndShowResume() {
     // Check if the PDF container is hidden, then show it
     var resumeContainer = document.getElementById("resumeContainer");
     if (resumeContainer.classList.contains("hidden")) {
-        showResume();
+        showContent('resumeContainer');
     }
 }
 
