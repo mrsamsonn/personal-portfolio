@@ -3,4 +3,5 @@
 ```
 run source ./venv/bin/activate
 npm run dev
+git subtree push --prefix dist origin gh-pages
 ```
