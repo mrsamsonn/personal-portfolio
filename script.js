@@ -1,7 +1,3 @@
-const toggleCheckbox = document.getElementById('Toggle3');
-const techySection = document.getElementById('techySection');
-const nonTechySection = document.getElementById('nonTechySection');
-
 var navbar = document.getElementById('navbar');
 var themeDiv = document.getElementById('theme-div');
 var svgScroll = document.getElementById('svgScrolldown');
@@ -31,16 +27,6 @@ var sections = [
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' }
 ];
-
-toggleCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-        nonTechySection.classList.remove('hidden');
-        techySection.classList.add('hidden');
-    } else {
-        nonTechySection.classList.add('hidden');
-        techySection.classList.remove('hidden');
-    }
-});
 
 //Reveal Contact Chat
 const introSection = document.getElementById('intro-title');
