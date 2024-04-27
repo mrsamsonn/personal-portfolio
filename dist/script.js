@@ -606,3 +606,21 @@ project.forEach(project => {
 
     });
 });
+
+// ------- Resume Button ----------
+function scrollToAboutAndShowResume() {
+    // Scroll to the "about" section
+    document.getElementById("about").scrollIntoView({ behavior: 'smooth' });
+
+    // Check if the PDF container is hidden, then show it
+    var resumeContainer = document.getElementById("resumeContainer");
+    if (resumeContainer.classList.contains("hidden")) {
+        resumeContainer.classList.remove("hidden");
+    }
+}
+
+// ------WindowMenu----------
+function showResume() {
+    var resumeContainer = document.getElementById("resumeContainer");
+    resumeContainer.classList.toggle('hidden');
+}
