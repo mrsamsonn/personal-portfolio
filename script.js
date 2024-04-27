@@ -620,20 +620,3 @@ project.forEach(project => {
 
     });
 });
-
-
-//theme switching
-document.addEventListener('DOMContentLoaded', function() {
-    const themeSwitchCheckbox = document.getElementById('theme-switch-checkbox');
-    const initialTheme = document.documentElement.getAttribute('data-theme') || 'lofi';
-    themeSwitchCheckbox.checked = initialTheme === 'black';
-
-    const toggleTheme = () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'lofi';
-        const newTheme = currentTheme === 'lofi' ? 'black' : 'lofi';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-    };
-
-    themeSwitchCheckbox.addEventListener('click', toggleTheme);
-});
