@@ -6,16 +6,9 @@ var isCentered = false;
 var isOpened = false;
 
 // -----------Emailjs config.js-------------
-
-require('dotenv').config()
-
-// const emailjsServiceId = config.emailjs.serviceId;
-// const emailjsTemplateId = config.emailjs.templateId;
-// const emailjsPublicKey = config.emailjs.publicKey;
-
-const emailjsServiceId = process.env.serviceId;
-const emailjsTemplateId = process.env.templateId;
-const emailjsPublicKey = process.env.publicKey;
+const emailjsServiceId = config.emailjs.serviceId;
+const emailjsTemplateId = config.emailjs.templateId;
+const emailjsPublicKey = config.emailjs.publicKey;
 
  // Emailjs initialization
  (function(){
