@@ -5,5 +5,5 @@ Noted commands:
 venv            -- run source ./venv/bin/activate
 run configs     -- npm run dev
 update gh-pages -- git subtree push --prefix dist origin gh-pages
-update JS       -- browserify script.js -o bundle.js
+update JS       -- browserify contact.js -o bundle.js
 ```
