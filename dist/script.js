@@ -264,6 +264,11 @@ function hideContent(idToShow) {
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].id !== idToShow && !elements[i].classList.contains('hidden')) {
             elements[i].classList.add('hidden');
+            // If it's a video element, pause it and remove its source to prevent loading
+            if (elements[i].tagName.toLowerCase() === 'video') {
+                elements[i].pause();
+                elements[i].removeAttribute('src');
+            }
         }
     }
 }
@@ -272,4 +277,13 @@ function showContent(idToShow) {
     hideContent(idToShow); // Hide other content
     var container = document.getElementById(idToShow);
     container.classList.toggle('hidden');
+    // If it's a video element, set the source back and play it
+    if (container.tagName.toLowerCase() === 'video') {
+        var videoSrc = container.getAttribute('data-src');
+        if (videoSrc) {
+            container.setAttribute('src', videoSrc);
+            container.load();
+            container.play();
+        }
+    }
 }
