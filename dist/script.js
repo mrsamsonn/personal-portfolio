@@ -264,6 +264,11 @@ function hideContent(idToShow) {
     for (var i = 0; i < elements.length; i++) {
         if (elements[i].id !== idToShow && !elements[i].classList.contains('hidden')) {
             elements[i].classList.add('hidden');
+
+            // If the element is a video, pause it
+            var videos = elements[i].querySelector('video');
+            videos.load();
+            videos.pause();
         }
     }
 }
@@ -271,5 +276,12 @@ function hideContent(idToShow) {
 function showContent(idToShow) {
     hideContent(idToShow); // Hide other content
     var container = document.getElementById(idToShow);
-    container.classList.toggle('hidden');
+    container.classList.remove('hidden');
+
+    // Check if there's a video element inside the content
+    var video = container.querySelector('video');
+    if (video && video.paused) {
+        video.load();
+        video.play();
+    }
 }
