@@ -255,6 +255,11 @@ function scrollToAboutAndShowResume() {
 
 // ------WindowMenu----------
 
+function hasVideo(contentElement){
+    return contentElement.querySelector('video') !== null;
+}
+
+
 // check if anything is unhidden
 function hideContent(idToShow) {
     var windowContent = document.getElementById("windowContent");
@@ -265,10 +270,12 @@ function hideContent(idToShow) {
         if (elements[i].id !== idToShow && !elements[i].classList.contains('hidden')) {
             elements[i].classList.add('hidden');
 
-            // If the element is a video, pause it
-            var videos = elements[i].querySelector('video');
-            videos.load();
-            videos.pause();
+            if(hasVideo(elements[i])){
+                // If the element is a video, pause it
+                var videos = elements[i].querySelector('video');
+                videos.load();
+                videos.pause();
+            }
         }
     }
 }
@@ -276,12 +283,17 @@ function hideContent(idToShow) {
 function showContent(idToShow) {
     hideContent(idToShow); // Hide other content
     var container = document.getElementById(idToShow);
-    container.classList.remove('hidden');
+    
+    if(hasVideo(container)){
+        container.classList.remove('hidden');
 
-    // Check if there's a video element inside the content
-    var video = container.querySelector('video');
-    if (video && video.paused) {
-        video.load();
-        video.play();
+        // Check if there's a video element inside the content
+        var video = container.querySelector('video');
+        if (video !== null && video.paused) {
+            video.load();
+            video.play();
+        }
+    }else{
+        container.classList.toggle('hidden');
     }
 }
