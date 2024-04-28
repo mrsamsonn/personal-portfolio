@@ -6,16 +6,16 @@ var isCentered = false;
 var isOpened = false;
 
 // -----------Emailjs config.js-------------
-const emailjsServiceId = config.emailjs.serviceId;
-const emailjsTemplateId = config.emailjs.templateId;
-const emailjsPublicKey = config.emailjs.publicKey;
+// const emailjsServiceId = config.emailjs.serviceId;
+// const emailjsTemplateId = config.emailjs.templateId;
+// const emailjsPublicKey = config.emailjs.publicKey;
 
- // Emailjs initialization
- (function(){
-    emailjs.init({
-        publicKey: emailjsPublicKey,
-    });
-})();
+//  // Emailjs initialization
+//  (function(){
+//     emailjs.init({
+//         publicKey: emailjsPublicKey,
+//     });
+// })();
 
 // ------------------------
 
