@@ -1,14 +1,14 @@
 // -----------Emailjs config.js-------------
-const emailjsServiceId = config.emailjs.serviceId;
-const emailjsTemplateId = config.emailjs.templateId;
-const emailjsPublicKey = config.emailjs.publicKey;
+// const emailjsServiceId = config.emailjs.serviceId;
+// const emailjsTemplateId = config.emailjs.templateId;
+// const emailjsPublicKey = config.emailjs.publicKey;
 
- // Emailjs initialization
- (function(){
-    emailjs.init({
-        publicKey: emailjsPublicKey,
-    });
-})();
+//  // Emailjs initialization
+//  (function(){
+//     emailjs.init({
+//         publicKey: emailjsPublicKey,
+//     });
+// })();
 
 // ------------------------
 
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Emailjs Function
-    function sendMail(){
-        let parms = {
-            name : Name,
-            email : Email,
-            message : Message,
-        }
-        emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
-    }
+    // function sendMail(){
+    //     let parms = {
+    //         name : Name,
+    //         email : Email,
+    //         message : Message,
+    //     }
+    //     emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
+    // }
 
     const RequestName = function() {
         if (!Name && !Email && !Message) {
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sendButton.addEventListener("click", function(event) {
         if (document.querySelector("#message-reply") && Email && Name) {
             RequestMessage();
-            sendMail();
+            // sendMail();
         } else if (!Message && !Email && Name){
             RequestEmail();
         }else{
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
                 RequestMessage();
-                sendMail();
+                // sendMail();
                 Email="";
                 Message="";
             } else if(!Message && !Email && Name) {
