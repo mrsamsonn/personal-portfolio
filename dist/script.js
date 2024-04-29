@@ -22,6 +22,15 @@ const closeChat = document.getElementById('close-chat');
 const contactInput = document.getElementById('contact-input');
 const chatStart = document.getElementById('init-chat');
 
+function toggleBodyOverflow() {
+    const body = document.querySelector('body');
+    if (body.style.overflow === 'hidden') {
+        body.style.overflow = 'scroll';
+    } else {
+        body.style.overflow = 'hidden';
+    }
+}
+
 function toggleContactText() {
     // Check if the opacity of the contact input div is 100
     const computedStyle = window.getComputedStyle(contactInput);
@@ -43,6 +52,8 @@ contactButton.addEventListener('click', function() {
     contactInput.classList.toggle('opacity-100');
     if(window.innerWidth < 430){
         introSection.classList.toggle('hidden');
+        // Set overflow property to 'hidden'
+        toggleBodyOverflow();
     }
     
      if(!isOpened){
@@ -76,6 +87,8 @@ contactButtonNav.addEventListener('click', function() {
     contactInput.classList.toggle('opacity-100');
     if(window.innerWidth < 430){
         introSection.classList.toggle('hidden');
+        // Set overflow property to 'hidden'
+        toggleBodyOverflow();
     }
     
      if(!isOpened){
@@ -109,6 +122,8 @@ closeChat.addEventListener('click', function() {
     contactInput.classList.toggle('opacity-100');
     if(window.innerWidth < 430){
         introSection.classList.toggle('hidden');
+        // Set overflow property to 'hidden'
+        toggleBodyOverflow();
     }
     
      if(!isOpened){
