@@ -41,6 +41,9 @@ contactButton.addEventListener('click', function() {
     introSection.classList.toggle('-translate-x-2/3');
     contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
+    if(window.innerWidth < 430){
+        introSection.classList.toggle('hidden');
+    }
     
      if(!isOpened){
         // Delay the toggle of chatStart by 350 milliseconds (for example)
@@ -71,6 +74,9 @@ contactButtonNav.addEventListener('click', function() {
     introSection.classList.toggle('-translate-x-2/3');
     contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
+    if(window.innerWidth < 430){
+        introSection.classList.toggle('hidden');
+    }
     
      if(!isOpened){
         // Delay the toggle of chatStart by 350 milliseconds (for example)
@@ -101,6 +107,9 @@ closeChat.addEventListener('click', function() {
     introSection.classList.toggle('-translate-x-2/3');
     contactInput.classList.toggle('z-10');
     contactInput.classList.toggle('opacity-100');
+    if(window.innerWidth < 430){
+        introSection.classList.toggle('hidden');
+    }
     
      if(!isOpened){
         // Delay the toggle of chatStart by 350 milliseconds (for example)
@@ -152,32 +161,34 @@ window.addEventListener('scroll', function() {
 
 
 // ------ Nav Bar -----
-    if (window.scrollY > 0) {
-        // Add background and text color
-        navbar.classList.add('bg-black', 'text-white', 'text-xs');
-        navbar.classList.remove('mr-5','mt-5');
-        themeDiv.classList.add('p-3');
-        themeDiv.classList.remove('p-5');
-        svgScroll.classList.add('opacity-0');
-        svgScroll.classList.remove('opacity-100');
-        if (!isCentered) {
-                // Move the navbar to the center
-                // navbar.style.right = 'calc(50% - ' + (navbarWidth / 2) + 'px)';
-                // navbar.style.right = 0;
-                isCentered = true;
-            }
-        } else {
-            // Remove background and text color
-            navbar.classList.remove('bg-black', 'text-white', 'text-xs');
-            navbar.classList.add('mr-5','mt-5');
-            themeDiv.classList.remove('p-3');
-            themeDiv.classList.add('p-5');
-            svgScroll.classList.remove('opacity-0');
-        svgScroll.classList.add('opacity-100');
-            // Move the navbar back to the right
-            navbar.style.right = '0';
-            isCentered = false;
+    if(window.innerWidth > 428){
+        if (window.scrollY > 0) {
+            // Add background and text color
+            navbar.classList.add('bg-black', 'text-white', 'text-xs');
+            navbar.classList.remove('mr-5','mt-5');
+            themeDiv.classList.add('p-3');
+            themeDiv.classList.remove('p-5');
+            svgScroll.classList.add('opacity-0');
+            svgScroll.classList.remove('opacity-100');
+            if (!isCentered) {
+                    // Move the navbar to the center
+                    // navbar.style.right = 'calc(50% - ' + (navbarWidth / 2) + 'px)';
+                    // navbar.style.right = 0;
+                    isCentered = true;
+                }
+            } else {
+                // Remove background and text color
+                navbar.classList.remove('bg-black', 'text-white', 'text-xs');
+                navbar.classList.add('mr-5','mt-5');
+                themeDiv.classList.remove('p-3');
+                themeDiv.classList.add('p-5');
+                svgScroll.classList.remove('opacity-0');
+                svgScroll.classList.add('opacity-100');
+                // Move the navbar back to the right
+                navbar.style.right = '0';
+                isCentered = false;
         }
+    }
 
     // Loop through sections and add buttons dynamically based on scroll position
     for (var i = 0; i < sections.length; i++) {
