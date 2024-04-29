@@ -14,6 +14,14 @@
 
 // ----- Chat Function --------
 
+// scroll up when textarea is deselected in iphone
+if(window.innerWidth < 430){
+    document.getElementById('email-input').addEventListener('blur', function() {
+        // Scroll the textarea back to the top
+        this.scrollTop = 0;
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const sendButton = document.querySelector(".btn-outline");
     const inputField = document.querySelector("#email-input");
