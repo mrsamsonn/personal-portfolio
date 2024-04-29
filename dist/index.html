@@ -89,9 +89,9 @@
                     </div>
                 </div>
             </div>
-            <div id="contact-input" class="flex flex-col w-1/3 items-center translate-x-2/4 absolute bg-base p-10 transition-opacity duration-300 opacity-0 -z-30 shadow-md iphone:w-full iphone:translate-x-0">
-                <div class="flex justify-end w-full font-bold h-10"><button id="close-chat">X</button></div>
-                <div id="chat-area" class="flex flex-col overflow-y-auto max-h-[400px] overflow-x-hidden">
+            <div id="contact-input" class="flex flex-col w-1/3 items-center translate-x-2/4 absolute bg-base p-10 transition-opacity duration-300 opacity-0 -z-30 shadow-md iphone:h-screen iphone:w-full iphone:translate-x-0">
+                <div class="flex justify-end w-full font-bold h-10 iphone:mt-10"><button id="close-chat">X</button></div>
+                <div id="chat-area" class="flex flex-col overflow-y-auto md:max-h-[400px] iphone:h-full overflow-x-hidden">
                     <div id="init-chat" class="chat chat-start opacity-0 translate-x-36 ease-in transition-all duration-200 transform">
                         <div class="chat-image avatar">
                           <div class="w-10 rounded-full">
@@ -108,12 +108,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-row mt-5 w-full justify-center space-x-2">
+                <div class="flex flex-row mt-5 w-full justify-center space-x-2 iphone:pb-5">
                     <textarea id="email-input" type="text" placeholder="Message" class="textarea w-full max-w-xs input-bordered h-auto resize-none" autocomplete="off"></textarea>
                     <button class="btn btn-outline btn-sm">Send</button>
                 </div>
             </div>
-            <div id="svgScrolldown" class="absolute bottom-0 flex items-center justify-center w-full mb-4 transition-opacity duration-300">
+            <div id="svgScrolldown" class="absolute bottom-0 flex items-center justify-center w-full mb-4 transition-opacity duration-300 iphone:hidden">
                 <a class="cursor-pointer" onclick="scrollToTarget('projects')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 animate-bounce">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -966,7 +966,7 @@
                                 </div>
                                 <div id="piano1Container" class="theContent flex flex-row w-full h-full hidden">
                                     <div class="flex w-2/3 items-center justify-center h-full">
-                                        <video src="./static/piano1.mp4" class="h-full w-full bg-black" controls loop autoplay></video>
+                                        <video src="./static/piano1.mp4" class="h-full w-full bg-black" controls loop autoplay playsinline></video>
                                     </div>
                                     <div class="flex flex-col w-1/3 text-sm h-full justify-center items-center space-y-1">
                                         <div class="flex flex-col bg-base-300 h-1/4 w-full justify-center">
@@ -991,7 +991,7 @@
                                 </div>
                                 <div id="piano2Container" class="theContent flex flex-row w-full h-full hidden">
                                     <div class="flex w-2/3 items-center justify-center h-full">
-                                        <video src="./static/piano2.mp4" class="h-full w-full bg-black" controls loop autoplay></video>
+                                        <video src="./static/piano2.mp4" class="h-full w-full bg-black" controls loop autoplay playsinline></video>
                                     </div>
                                     <div class="flex flex-col w-1/3 text-sm h-full justify-center items-center space-y-1">
                                         <div class="flex flex-col bg-base-300 h-1/4 w-full justify-center">
