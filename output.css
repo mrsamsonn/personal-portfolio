@@ -3247,6 +3247,10 @@ details.collapse summary::-webkit-details-marker {
     height: 100vh;
   }
 
+  .iphone\:h-1\/2 {
+    height: 50%;
+  }
+
   .iphone\:w-full {
     width: 100%;
   }
