@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!--prevents iphone zoom-->
+    <title>Contact</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+         textarea, input {
+            font-size: 17px; /* prevents iphone zoom */
+            -webkit-text-size-adjust: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-col w-screen h-screen">
+        <div id="contact-input" class="flex flex-col w-full h-full items-center absolute bg-base p-10 transition-opacity duration-300 opacity-100">
+            <div class="flex justify-end w-full font-bold h-10 iphone:mt-10"><a href="./index.html">X</a></div>
+            <div id="chat-area" class="flex flex-col overflow-y-auto h-full overflow-x-hidden">
+                <div id="init-chat" class="chat chat-start opacity-100">
+                    <div class="chat-image avatar">
+                      <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS chat bubble component" src="static/myPhoto.jpg" />
+                      </div>
+                    </div>
+                    <div class="chat-header">
+                      John
+                      <time class="text-xs opacity-50"><div id="current-time"></div></time>
+                    </div>
+                    <div class="chat-bubble">Hello there! I'm John. What's your name?</div>
+                    <div class="chat-footer opacity-50">
+                      Delivered
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-row mt-5 w-full justify-center space-x-2 iphone:pb-5">
+                <textarea id="email-input" type="text" placeholder="Message" class="textarea w-full max-w-xs input-bordered h-auto resize-none" autocomplete="off"></textarea>
+                <button class="btn btn-outline btn-sm">Send</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <!-- <script src="./config.js"></script> -->
+    <script src="./contact.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
