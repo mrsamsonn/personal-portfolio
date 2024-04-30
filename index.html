@@ -19,11 +19,6 @@
             color: white;
             padding: 2px 5px 2px 5px;
         }
-        textarea, input {
-            font-size: 17px; /* prevents iphone zoom */
-            -webkit-text-size-adjust: none;
-        }
-
     </style>
 </head>
 <body class="font-sans w-screen overflow-x-hidden scroll">
@@ -52,7 +47,8 @@
                     </label>
                 </div>      
                 <div class="p-5">
-                    <button id="contactButton-nav" onclick="scrollToTarget('intro')" class="nav-link">Contact</button>
+                    <button id="contactButton-nav" onclick="scrollToTarget('intro')" class="nav-link iphone:hidden">Contact</button>
+                    <a class="nav-link hidden iphone:block" href="./mobile-chat.html">Contact</a>
                 </div>
                 <div class="p-5">
                     <button onclick="scrollToTarget('about')" class="">About</button>
@@ -82,7 +78,8 @@
                     </div>
                     <div class="flex flex-row space-x-2 mt-3">
                         <button onclick="scrollToAboutAndShowResume()" class="border-2 border-neutral bg-base-100 text-sm rounded-2xl py-1 px-4">Resume</button>
-                        <button id="contactButton" class="bg-neutral text-sm border-2 border-black text-white rounded-2xl py-1 px-4">Contact</button>
+                        <button id="contactButton" class="bg-neutral text-sm border-2 border-black text-white rounded-2xl py-1 px-4 iphone:hidden">Contact</button>
+                        <a href="./mobile-chat.html" class="bg-neutral text-sm border-2 border-black text-white rounded-2xl py-1 px-4 hidden iphone:block">Contact</a>
                     </div>
                     <div class="flex flex-row space-x-2 mt-3">
                         <a href="https://www.linkedin.com/in/johnsanjuan6/" target="_blank">
