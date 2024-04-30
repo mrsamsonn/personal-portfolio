@@ -323,3 +323,23 @@ function showContent(idToShow) {
         container.classList.toggle('hidden');
     }
 }
+
+
+// ---------- REMOVE DIV BY SCREEN SIZE---------------
+// hide section from mobile
+if(window.innerWidth < 430){
+    window.onload = function() {
+        var element = document.getElementById("aboutWindow");
+        var element2 = document.getElementById("desktopProject");
+        element.parentNode.removeChild(element);
+        element2.parentNode.removeChild(element2);
+    }
+}
+
+// hide section from deskop
+if(window.innerWidth > 430){
+    window.onload = function() {
+        var element = document.getElementById("mobileProject");
+        element.parentNode.removeChild(element);
+    }
+}
