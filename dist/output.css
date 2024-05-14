@@ -2643,6 +2643,10 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 1.25rem;
 }
 
+.mt-60 {
+  margin-top: 15rem;
+}
+
 .block {
   display: block;
 }
@@ -2703,8 +2707,12 @@ details.collapse summary::-webkit-details-marker {
   height: 100vh;
 }
 
-.max-h-\[400px\] {
-  max-height: 400px;
+.h-1\/3 {
+  height: 33.333333%;
+}
+
+.h-4\/5 {
+  height: 80%;
 }
 
 .min-h-full {
@@ -2850,6 +2858,12 @@ details.collapse summary::-webkit-details-marker {
   justify-content: center;
 }
 
+.-space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .-space-x-32 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(-8rem * var(--tw-space-x-reverse));
@@ -2878,12 +2892,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
-.-space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(-0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-y-auto {
@@ -3211,10 +3219,6 @@ details.collapse summary::-webkit-details-marker {
 }
 
 @media (min-width: 0) and (max-width: 428px) {
-  .iphone\:bottom-0 {
-    bottom: 0px;
-  }
-
   .iphone\:ml-0 {
     margin-left: 0px;
   }
@@ -3235,6 +3239,10 @@ details.collapse summary::-webkit-details-marker {
     display: none;
   }
 
+  .iphone\:h-1\/2 {
+    height: 50%;
+  }
+
   .iphone\:h-14 {
     height: 3.5rem;
   }
@@ -3247,34 +3255,16 @@ details.collapse summary::-webkit-details-marker {
     height: 100vh;
   }
 
-  .iphone\:h-1\/2 {
-    height: 50%;
+  .iphone\:w-1\/2 {
+    width: 50%;
   }
 
   .iphone\:w-full {
     width: 100%;
   }
 
-  .iphone\:w-1\/4 {
-    width: 25%;
-  }
-
-  .iphone\:w-2\/3 {
-    width: 66.666667%;
-  }
-
-  .iphone\:w-1\/2 {
-    width: 50%;
-  }
-
   .iphone\:translate-x-0 {
     --tw-translate-x: 0px;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .iphone\:scale-50 {
-    --tw-scale-x: .5;
-    --tw-scale-y: .5;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
@@ -3284,30 +3274,6 @@ details.collapse summary::-webkit-details-marker {
 
   .iphone\:justify-center {
     justify-content: center;
-  }
-
-  .iphone\:space-x-64 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(16rem * var(--tw-space-x-reverse));
-    margin-left: calc(16rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .iphone\:-space-x-96 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(-24rem * var(--tw-space-x-reverse));
-    margin-left: calc(-24rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .iphone\:-space-x-5 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(-1.25rem * var(--tw-space-x-reverse));
-    margin-left: calc(-1.25rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .iphone\:-space-x-3 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(-0.75rem * var(--tw-space-x-reverse));
-    margin-left: calc(-0.75rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .iphone\:-space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -3321,25 +3287,9 @@ details.collapse summary::-webkit-details-marker {
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   }
 
-  .iphone\:p-0 {
-    padding: 0px;
-  }
-
-  .iphone\:p-10 {
-    padding: 2.5rem;
-  }
-
   .iphone\:px-3 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-  }
-
-  .iphone\:pt-5 {
-    padding-top: 1.25rem;
-  }
-
-  .iphone\:pt-10 {
-    padding-top: 2.5rem;
   }
 
   .iphone\:pb-5 {
