@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
             userChatBubble.innerHTML = `
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img alt="User's avatar" src="static/avatar.png" />
                     </div>
                 </div>
                 <div class="chat-header">
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
             userChatBubble.innerHTML = `
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img alt="User's avatar" src="static/avatar.png" />
                     </div>
                 </div>
                 <div class="chat-header">
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
             userChatBubble.innerHTML = `
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img alt="User's avatar" src="static/avatar.png" />
                     </div>
                 </div>
                 <div class="chat-header">
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function() {
             userChatBubble.innerHTML = `
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
-                        <img alt="User's avatar" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <img alt="User's avatar" src="static/avatar.png" />
                     </div>
                 </div>
                 <div class="chat-header">

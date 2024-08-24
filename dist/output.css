@@ -2926,6 +2926,12 @@ details.collapse summary::-webkit-details-marker {
   margin-left: calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.-space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .-space-x-32 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(-8rem * var(--tw-space-x-reverse));
@@ -3314,6 +3320,10 @@ details.collapse summary::-webkit-details-marker {
     height: 50%;
   }
 
+  .iphone\:h-1\/2 {
+    height: 50%;
+  }
+
   .iphone\:h-14 {
     height: 3.5rem;
   }
@@ -3326,6 +3336,8 @@ details.collapse summary::-webkit-details-marker {
     height: 100vh;
   }
 
+  .iphone\:w-1\/2 {
+    width: 50%;
   .iphone\:w-1\/2 {
     width: 50%;
   }
