@@ -1,4 +1,4 @@
-const { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } = require('./config');
+import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
 const emailjs = require('@emailjs/nodejs');
 
 // -----------Emailjs config.js-------------

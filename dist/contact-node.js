@@ -1,10 +1,15 @@
-// const { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } = require('./config');
-const emailjs = require('@emailjs/nodejs');
+import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
+// const emailjs = require('@emailjs/nodejs');
+
+
+console.log(`Service ID: ${emailjsServiceId}`);
+console.log(`Template ID: ${emailjsTemplateId}`); 
+console.log(`Public Key: ${emailjsPublicKey}`); 
 
 // -----------Emailjs config.js-------------
-const emailjsServiceId = process.env.SERVICEID;
-const emailjsTemplateId = process.env.TEMPLATEID;
-const emailjsPublicKey = process.env.PUBLICKEY;
+// const emailjsServiceId = process.env.SERVICEID;
+// const emailjsTemplateId = process.env.TEMPLATEID;
+// const emailjsPublicKey = process.env.PUBLICKEY;
 
  // Emailjs initialization
  (function(){
