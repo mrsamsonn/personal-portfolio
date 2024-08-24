@@ -1,4 +1,9 @@
 const { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } = require('./config');
+
+console.log('SERVICEID:', process.env.SERVICEID);
+console.log('TEMPLATEID:', process.env.TEMPLATEID);
+console.log('PUBLICKEY:', process.env.PUBLICKEY);
+
 const emailjs = require('@emailjs/nodejs');
 
 // -----------Emailjs config.js-------------
