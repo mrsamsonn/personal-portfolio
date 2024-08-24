@@ -1,7 +1,3 @@
-require('dotenv').config();
-
-module.exports = {
-  emailjsServiceId: process.env.SERVICEID,
-  emailjsTemplateId: process.env.TEMPLATEID,
-  emailjsPublicKey: process.env.PUBLICKEY,
-};
+export const emailjsServiceId = process.env.SERVICEID;
+export const emailjsTemplateId = process.env.TEMPLATEID;
+export const emailjsPublicKey = process.env.PUBLICKEY;
