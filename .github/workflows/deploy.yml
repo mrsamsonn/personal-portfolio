@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Run Node.js script
-        run: node dist/config.js
+        run: node dist/contact-node.js
         env:
           SERVICEID: ${{ secrets.SERVICEID }}
           TEMPLATEID: ${{ secrets.TEMPLATEID }}
