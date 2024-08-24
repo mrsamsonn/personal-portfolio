@@ -1,5 +1,5 @@
 import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
-import emailjs from '@emailjs/nodejs';
+import emailjs from '@emailjs/browser';
 
 export function getMessage() {
     const message = 'testing some logs';
