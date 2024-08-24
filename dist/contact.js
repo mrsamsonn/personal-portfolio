@@ -1,3 +1,5 @@
+import emailjs from '@emailjs/nodejs'
+
 // -----------Emailjs config.js-------------
 const emailjsServiceId = process.env.SERVICEID;
 const emailjsTemplateId = process.env.TEMPLATEID;
