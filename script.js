@@ -343,3 +343,14 @@ if(window.innerWidth > 430){
         element.parentNode.removeChild(element);
     }
 }
+
+// ------------Mobile AboutMe---------------------------
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const mobileMenu = document.getElementById('mobileMenu');
+
+mobileMenuButton.addEventListener('click', function() {
+    console.log('clicked');
+});
+
+
+
