@@ -1,7 +1,11 @@
 import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
 // import * as emailjs from '@emailjs/nodejs';
 
-export const log_console = 'testing some log'
+message = 'testing some logs'
+
+export function logInfo(message) {
+    console.log(`INFO: ${message}`);
+  }
 
 // console.log(`Service ID: ${emailjsServiceId}`);
 // console.log(`Template ID: ${emailjsTemplateId}`); 
