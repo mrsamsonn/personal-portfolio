@@ -1,5 +1,5 @@
-import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config';
-import { init, send } from '@emailjs/nodejs';
+const { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } = require('./config');
+const emailjs = require('@emailjs/nodejs');
 
 // -----------Emailjs config.js-------------
 // const emailjsServiceId = process.env.SERVICEID;
@@ -8,7 +8,7 @@ import { init, send } from '@emailjs/nodejs';
 
  // Emailjs initialization
  (function(){
-    init({
+    emailjs.init({
         publicKey: emailjsPublicKey,
     });
 })();
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             email : Email,
             message : Message,
         }
-        send(emailjsServiceId, emailjsTemplateId, parms);
+        emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
     }
 
     const RequestName = function() {
