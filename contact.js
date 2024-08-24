@@ -1,5 +1,5 @@
 import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
-import * as emailjs from '@emailjs/nodejs';
+// import * as emailjs from '@emailjs/nodejs';
 
 log_console = 'testing some log'
 
