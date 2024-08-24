@@ -18,7 +18,7 @@ const emailjsPublicKey = process.env.PUBLICKEY;
 // ----- Chat Function --------
 
 // scroll up when textarea is deselected in iphone
-if(window.innerWidth < 430){
+if(global.innerWidth < 430){
     document.getElementById('email-input').addEventListener('blur', function() {
         // Scroll the textarea back to the top
         this.scrollTop = 0;
