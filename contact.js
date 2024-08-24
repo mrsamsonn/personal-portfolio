@@ -1,14 +1,14 @@
 // -----------Emailjs config.js-------------
-// const emailjsServiceId = config.emailjs.serviceId;
-// const emailjsTemplateId = config.emailjs.templateId;
-// const emailjsPublicKey = config.emailjs.publicKey;
+const emailjsServiceId = process.env.SERVICEID;
+const emailjsTemplateId = process.env.TEMPLATEID;
+const emailjsPublicKey = process.env.PUBLICKEY;
 
-//  // Emailjs initialization
-//  (function(){
-//     emailjs.init({
-//         publicKey: emailjsPublicKey,
-//     });
-// })();
+ // Emailjs initialization
+ (function(){
+    emailjs.init({
+        publicKey: emailjsPublicKey,
+    });
+})();
 
 // ------------------------
 
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const sendButton = document.querySelector(".btn-outline");
     const inputField = document.querySelector("#email-input");
     const chatArea = document.querySelector("#chat-area");
-    // let notReplied = false;
+    let notReplied = false;
 
     // Variables to temporarily store input
     let Email = "";
@@ -42,14 +42,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Emailjs Function
-    // function sendMail(){
-    //     let parms = {
-    //         name : Name,
-    //         email : Email,
-    //         message : Message,
-    //     }
-    //     emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
-    // }
+    function sendMail(){
+        let parms = {
+            name : Name,
+            email : Email,
+            message : Message,
+        }
+        emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
+    }
 
     const RequestName = function() {
         if (!Name && !Email && !Message) {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             }, 1000); // Delay of 1000 milliseconds (1 second)
 
-            // notReplied = true;
+            notReplied = true;
         } else {
             console.log("No reply state found");
         }
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             }, 1000); // Delay of 1000 milliseconds (1 second)
 
-            // notReplied = true;
+            notReplied = true;
         } else {
             // Create user's chat bubble RETURNING INVALID EMAIL
             const userChatBubble = document.createElement("div");
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sendButton.addEventListener("click", function(event) {
         if (document.querySelector("#message-reply") && Email && Name) {
             RequestMessage();
-            // sendMail();
+            sendMail();
         } else if (!Message && !Email && Name){
             RequestEmail();
         }else{
@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
                 RequestMessage();
-                // sendMail();
+                sendMail();
                 Email="";
                 Message="";
             } else if(!Message && !Email && Name) {
