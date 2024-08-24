@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/nodejs'
+const emailjs = require('@emailjs/nodejs');
 
 // -----------Emailjs config.js-------------
 const emailjsServiceId = process.env.SERVICEID;
