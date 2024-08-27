@@ -1,10 +1,10 @@
-import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
-import emailjs from '@emailjs/browser';
+// import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
+// import emailjs from '@emailjs/browser';
 
-export function getMessage() {
-    const message = 'testing some logs';
-    return message; // Return the message
-  }
+// export function getMessage() {
+//     const message = 'testing some logs';
+//     return message; // Return the message
+//   }
 
 // console.log(`Service ID: ${emailjsServiceId}`);
 // console.log(`Template ID: ${emailjsTemplateId}`); 
@@ -16,11 +16,11 @@ export function getMessage() {
 // const emailjsPublicKey = process.env.PUBLICKEY;
 
  // Emailjs initialization
- (function(){
-    emailjs.init({
-        publicKey: emailjsPublicKey,
-    });
-})();
+//  (function(){
+//     emailjs.init({
+//         publicKey: emailjsPublicKey,
+//     });
+// })();
 
 // ------------------------
 
@@ -54,14 +54,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Emailjs Function
-    function sendMail(){
-        let parms = {
-            name : Name,
-            email : Email,
-            message : Message,
-        }
-        emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
-    }
+    // function sendMail(){
+    //     let parms = {
+    //         name : Name,
+    //         email : Email,
+    //         message : Message,
+    //     }
+    //     emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
+    // }
 
     const RequestName = function() {
         if (!Name && !Email && !Message) {
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sendButton.addEventListener("click", function(event) {
         if (document.querySelector("#message-reply") && Email && Name) {
             RequestMessage();
-            sendMail();
+            // sendMail();
         } else if (!Message && !Email && Name){
             RequestEmail();
         }else{
@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Scroll the textarea to the top
                 this.scrollTop = 0;
                 RequestMessage();
-                sendMail();
+                // sendMail();
                 Email="";
                 Message="";
             } else if(!Message && !Email && Name) {
