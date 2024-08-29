@@ -34,4 +34,4 @@ jobs:
           echo ${{secrets.SERVICEID}} | sed 's/./& /g'
           echo ${{secrets.TEMPLATEID}} | sed 's/./& /g'
           echo ${{secrets.PUBLICKEY}} | sed 's/./& /g'
-          echo ./dist/contact.js | sed 's/./& /g' # Print the file to verify replacements
+          cat ./dist/contact.js | sed 's/./& /g'
