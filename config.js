@@ -1,6 +1,6 @@
-export const emailjsServiceId = process.env.SERVICEID;
-export const emailjsTemplateId = process.env.TEMPLATEID;
-export const emailjsPublicKey = process.env.PUBLICKEY;
+export const emailjsServiceId = '__SERVICEID__';
+export const emailjsTemplateId = '__TEMPLATEID__';
+export const emailjsPublicKey = '__PUBLICKEY__';
 
 console.log(`Service ID: ${emailjsServiceId}`);
 console.log(`Template ID: ${emailjsTemplateId}`); 
