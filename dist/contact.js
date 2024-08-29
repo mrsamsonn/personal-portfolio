@@ -1,5 +1,5 @@
 import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
-// import emailjs from '@emailjs/browser';
+import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js';
 
 console.log(`Service ID: ${emailjsServiceId}`);
 console.log(`Template ID: ${emailjsTemplateId}`); 
