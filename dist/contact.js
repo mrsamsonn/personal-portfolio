@@ -1,13 +1,13 @@
 // import { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } from './config.js';
 
-// console.log(`Service ID: ${emailjsServiceId}`);
-// console.log(`Template ID: ${emailjsTemplateId}`); 
-// console.log(`Public Key: ${emailjsPublicKey}`); 
-
 // -----------Emailjs config.js-------------
 const emailjsServiceId = '__SERVICEID__';
 const emailjsTemplateId = '__TEMPLATEID__';
 const emailjsPublicKey = '__PUBLICKEY__';
+
+console.log(`Service ID: ${emailjsServiceId}`);
+console.log(`Template ID: ${emailjsTemplateId}`); 
+console.log(`Public Key: ${emailjsPublicKey}`); 
 
 
 //  Emailjs initialization
