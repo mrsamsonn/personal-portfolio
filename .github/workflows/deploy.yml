@@ -9,6 +9,10 @@ on:
 jobs:
   run-nodejs:
     runs-on: ubuntu-latest
+    env:
+      SERVICEID: ${{ secrets.SERVICEID }}
+      TEMPLATEID: ${{ secrets.TEMPLATEID }}
+      PUBLICKEY: ${{ secrets.PUBLICKEY }}
 
     steps:
       - name: Checkout code
