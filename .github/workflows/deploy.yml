@@ -24,9 +24,9 @@ jobs:
 
       - name: Replace placeholders with secrets
         run: |
-          sed -i 's/__SERVICEID__/${{ secrets.SERVICEID }}/g' ./dist/config.js
-          sed -i 's/__TEMPLATEID__/${{ secrets.TEMPLATEID }}/g' ./dist/config.js
-          sed -i 's/__PUBLICKEY__/${{ secrets.PUBLICKEY }}/g' ./dist/config.js
+          sed -i 's/__SERVICEID__/${{ secrets.SERVICEID }}/g' /dist/config.js
+          sed -i 's/__TEMPLATEID__/${{ secrets.TEMPLATEID }}/g' /dist/config.js
+          sed -i 's/__PUBLICKEY__/${{ secrets.PUBLICKEY }}/g' /dist/config.js
 
       - name: Run Node.js script
         run: node dist/config.js
