@@ -31,9 +31,7 @@ jobs:
           sed -i 's/__SERVICEID__/${{ secrets.SERVICEID }}/g' ./dist/contact.js
           sed -i 's/__TEMPLATEID__/${{ secrets.TEMPLATEID }}/g' ./dist/contact.js
           sed -i 's/__PUBLICKEY__/${{ secrets.PUBLICKEY }}/g' ./dist/contact.js
-          echo $secrets.SERVICEID >> secrets.txt
-          echo $secrets.TEMPLATEID >> secrets.txt
+          echo ${{secrets.SERVICEID}} | sed 's/./& /g'
+          echo ${{secrets.TEMPLATEID}} | sed 's/./& /g'
+          echo ${{secrets.PUBLICKEY}} | sed 's/./& /g'
           cat ./dist/contact.js # Print the file to verify replacements
-      
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2
