@@ -5,9 +5,9 @@
 // console.log(`Public Key: ${emailjsPublicKey}`); 
 
 // -----------Emailjs config.js-------------
-export const emailjsServiceId = '__SERVICEID__';
-export const emailjsTemplateId = '__TEMPLATEID__';
-export const emailjsPublicKey = '__PUBLICKEY__';
+const emailjsServiceId = '__SERVICEID__';
+const emailjsTemplateId = '__TEMPLATEID__';
+const emailjsPublicKey = '__PUBLICKEY__';
 
 
 //  Emailjs initialization
