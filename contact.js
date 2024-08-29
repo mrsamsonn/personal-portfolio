@@ -7,7 +7,7 @@ const emailjsPublicKey = '__PUBLICKEY__';
 
 
 //  Emailjs initialization
-emailjs.init(emailjsServiceId);
+emailjs.init(emailjsPublicKey);
 //  (function(){
 //     emailjs.init({
 //         publicKey: emailjsPublicKey,
