@@ -5,11 +5,6 @@ const emailjsServiceId = '__SERVICEID__';
 const emailjsTemplateId = '__TEMPLATEID__';
 const emailjsPublicKey = '__PUBLICKEY__';
 
-console.log(`Printing`);
-console.log('__SERVICEID__');
-console.log('__TEMPLATEID__'); 
-console.log('__PUBLICKEY__'); 
-
 
 //  Emailjs initialization
 emailjs.init(emailjsPublicKey);
