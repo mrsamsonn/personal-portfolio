@@ -7,7 +7,7 @@ const emailjsPublicKey = '__PUBLICKEY__';
 
 
 //  Emailjs initialization
-emailjs.init(emailjsPublicKey);
+emailjs.init('__PUBLICKEY__');
 //  (function(){
 //     emailjs.init({
 //         publicKey: emailjsPublicKey,
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             email : Email,
             message : Message,
         }
-        emailjs.send(emailjsServiceId, emailjsTemplateId, parms);
+        emailjs.send('__SERVICEID__', '__TEMPLATEID__', parms);
     }
 
     const RequestName = function() {
