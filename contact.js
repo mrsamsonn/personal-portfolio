@@ -6,9 +6,9 @@ const emailjsTemplateId = '__TEMPLATEID__';
 const emailjsPublicKey = '__PUBLICKEY__';
 
 console.log(`Printing`);
-console.log(`Service ID: ${emailjsServiceId}`);
-console.log(`Template ID: ${emailjsTemplateId}`); 
-console.log(`Public Key: ${emailjsPublicKey}`); 
+// console.log(`Service ID: ${emailjsServiceId}`);
+// console.log(`Template ID: ${emailjsTemplateId}`); 
+// console.log(`Public Key: ${emailjsPublicKey}`); 
 
 
 //  Emailjs initialization
